@@ -178,6 +178,7 @@ display: flex;
 }
 
 @media (max-width: 767px) {
+
   .contenedor{
     max-width: 90%;
     margin: 0 auto;
@@ -229,6 +230,13 @@ display: flex;
   }
   h3 > .typ-content{
     line-height: 1.7em !important;
+  }
+  .map {
+    text-align: center;
+    padding: 10px 12px;
+  }
+  .map-container{
+   width: 100%;
   }
 }
 

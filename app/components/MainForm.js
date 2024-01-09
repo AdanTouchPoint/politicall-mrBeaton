@@ -11,6 +11,7 @@ import ThankYou from "./ThankYou";
 import Card from "react-bootstrap/cjs/Card";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { fetchRepresentatives } from "../assets/petitions/fetchRepresentatives";
+
 const MainForm = ({
   dataUser,
   setDataUser,

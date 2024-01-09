@@ -1,0 +1,19 @@
+.map {
+background-color: rgb(218, 218, 219);
+display: flex;
+place-content: center center;
+text-align: center;
+padding: 30px;
+}
+.map-container {
+width: 50%;
+}
+
+.map-container path {
+    fill: rgb(69, 69, 70);
+    stroke: black;
+    stroke-width: 2px;
+}
+.map-container :hover {
+fill: rgb(42, 140, 165);
+}
