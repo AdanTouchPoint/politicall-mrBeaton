@@ -9,19 +9,33 @@ import QLD from "./QLD";
 import NSW from "./NSW";
 import NT from "./NT";
 
-const AusMap = () => {
+const AusMap = ({states, setStates, setShowFindForm, showMap,setShowMap}) => {
   return (
-    <div className="map container" >
-     <p>Intructions</p>
+    <div hidden={showMap} className="map" >
       <div className="map-container">
       <svg version="1.2" viewBox="0 0 1000 1222" xmlns="http://www.w3.org/2000/svg" >
-          <NT />
-          <NSW />
-          <WA />
-          <VIC />
-          <TAS />
-          <SA />
-          <QLD />
+          <NT/>
+          <QLD/>
+          <WA/>
+          <TAS/>
+          <NSW
+            state={states}
+            setState={setStates}
+            setShowFindForm={setShowFindForm}
+            setShowMap={setShowMap}
+          /> { /*RELEVANTE*/}
+          <VIC
+            state={states}
+            setState={setStates}
+            setShowFindForm={setShowFindForm}
+            setShowMap={setShowMap}
+          /> { /*RELEVANTE*/}
+          <SA
+            state={states}
+            setState={setStates}
+            setShowFindForm={setShowFindForm}
+            setShowMap={setShowMap}
+          /> { /*RELEVANTE*/}
       </svg>
       </div>
     </div>

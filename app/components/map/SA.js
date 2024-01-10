@@ -3,10 +3,12 @@
 import React from 'react';
 import "./css/map.css"
 
-const SA = () => {
+const SA = ({states, setStates, setShowFindForm, setShowMap}) => {
   const click = (e) => {
     e.preventDefault();
     console.log("SA");
+    setShowMap(true)
+    setShowFindForm(false)
   };
 
 return (

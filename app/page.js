@@ -80,6 +80,8 @@ function Home() {
     })
     const [loading, setLoading] = useState(true)
     const [allDataIn, setAllDataIn] = useState([])
+    const [showFindForm, setShowFindForm] = useState(true);
+    const [showMap,setShowMap] = useState(false)
    // const adanCID ='636dadcf2626f92aade6664a'
     useEffect(() => {
 
@@ -110,10 +112,18 @@ function Home() {
       {
         !loading && (
           <div>
-            
-            <AusMap/>
+            <AusMap
+              showMap={showMap}
+              setShowMap={setShowMap}
+              showFindForm={showFindForm}
+              setShowFindForm={setShowFindForm}
+              state={states}
+              setState={setStates}
+            />
           
           <MainForm
+              showFindForm={showFindForm}
+              setShowFindForm={setShowFindForm}
               configurations={configurations}
               setEmailData={setEmailData}
               emailData={emailData}

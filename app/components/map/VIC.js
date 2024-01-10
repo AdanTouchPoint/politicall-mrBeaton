@@ -3,10 +3,12 @@
 import React from 'react';
 import "./css/map.css"
 
-const VIC = () => {
+const VIC = ({states, setStates, setShowFindForm, setShowMap}) => {
   const click = (e) => {
     e.preventDefault();
     console.log("VIC");
+    setShowMap(true)
+    setShowFindForm(false)
   };
 
 return (

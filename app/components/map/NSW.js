@@ -3,10 +3,13 @@
 import React from 'react';
 import "./css/map.css"
 
-const NSW = () => {
+const NSW = ({states, setStates, setShowFindForm, setShowMap}) => {
   const click = (e) => {
     e.preventDefault();
     console.log("NSW");
+    setShowMap(true)
+    setShowFindForm(false)
+    
   };
 
 return (

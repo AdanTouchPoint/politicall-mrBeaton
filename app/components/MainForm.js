@@ -35,11 +35,12 @@ const MainForm = ({
   setQuestions,
   configurations,
   allDataIn,
-  setAllDataIn
+  setAllDataIn,
+  setShowFindForm, 
+  showFindForm
 }) => {
   const [showLoadSpin, setShowLoadSpin] = useState(false);
   const [showList, setShowList] = useState(true);
-  const [showFindForm, setShowFindForm] = useState(false);
   const [showEmailForm, setShowEmailForm] = useState(true);
   const [validated, setValidated] = useState(false);
   const [error, setError] = useState(false);
@@ -157,7 +158,7 @@ const {formFields} = mainData
   console.log("TYPdata", typData);
   console.log("userdata", emailData);
   return (
-    <div className={"contenedor main-form-flex-container"}>
+    <div hidden={showFindForm}  className={"contenedor main-form-flex-container"}>
       <Card className="bg-dark card-img text-white main-image-container">
         <Card.Header
           className="card-img"
@@ -177,7 +178,7 @@ const {formFields} = mainData
       </Card>
       <div className={"container instructions"}>{mainData.instruction}</div>
       <div className={"form-container"}>
-        <div hidden={showFindForm} className={"container container-content"}>
+        <div className={"container container-content"}>
           {error ? (
             <Alert variant={"danger"}>
               Please fill all fields.  Also, please make sure there are no spaces before of after your email or postcode.
