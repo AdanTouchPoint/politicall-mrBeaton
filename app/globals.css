@@ -238,9 +238,13 @@ display: flex;
   .map-container{
    width: 100%;
   }
+ 
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px){
+  .modal-content-own {
+    width: 50%;
+  }
   .contenedor{
     max-width: 90%;
     margin: 0 auto;

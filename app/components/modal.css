@@ -16,7 +16,7 @@
   padding: 20px;
   border-radius: 8px;
   text-align: center;
-  width: 50%;
+  width: 100%;
 }
 
 /* Estilo para el botón de cerrar (puedes personalizarlo según tus necesidades) */
@@ -27,4 +27,9 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .modal-content-own {
+    width: 50%;
+  }
 }
