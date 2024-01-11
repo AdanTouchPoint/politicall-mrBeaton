@@ -8,16 +8,35 @@ import SA from "./SA";
 import QLD from "./QLD";
 import NSW from "./NSW";
 import NT from "./NT";
+import Modal from "../Modal";
 
-const AusMap = ({states, setStates, setShowFindForm, showMap,setShowMap}) => {
+const AusMap = ({modalText, states, setStates, setShowFindForm, showMap, setShowMap, showModal, setShowModal}) => {
   return (
     <div hidden={showMap} className="map" >
       <div className="map-container">
+         <Modal
+            states={states}
+            modalText={modalText}
+            showModal={showModal}
+            setShowModal={setShowModal}
+         />
       <svg version="1.2" viewBox="0 0 1000 1222" xmlns="http://www.w3.org/2000/svg" >
-          <NT/>
-          <QLD/>
-          <WA/>
-          <TAS/>
+          <NT
+            setStates={setStates}
+            setShowModal={setShowModal}
+            />
+          <QLD
+            setStates={setStates}
+            setShowModal={setShowModal}
+            />
+          <WA
+            setStates={setStates}
+            setShowModal={setShowModal}
+            />
+          <TAS
+            setStates={setStates}
+            setShowModal={setShowModal}
+            />
           <NSW
             state={states}
             setState={setStates}
@@ -43,4 +62,3 @@ const AusMap = ({states, setStates, setShowFindForm, showMap,setShowMap}) => {
 };
 
 export default AusMap;
-

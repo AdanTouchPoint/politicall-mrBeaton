@@ -82,6 +82,13 @@ function Home() {
     const [allDataIn, setAllDataIn] = useState([])
     const [showFindForm, setShowFindForm] = useState(true);
     const [showMap,setShowMap] = useState(false)
+    const [showModal, setShowModal] = useState(false);
+    const [ modalText, setModalText] = useState({
+      title: "TitleModal",
+      message: "",
+      button: "close"
+    })
+
    // const adanCID ='636dadcf2626f92aade6664a'
     useEffect(() => {
 
@@ -113,12 +120,15 @@ function Home() {
         !loading && (
           <div>
             <AusMap
+              modalText={modalText}
               showMap={showMap}
               setShowMap={setShowMap}
               showFindForm={showFindForm}
               setShowFindForm={setShowFindForm}
-              state={states}
-              setState={setStates}
+              states={states}
+              setStates={setStates}
+              showModal={showModal}
+              setShowModal={setShowModal}
             />
           
           <MainForm
