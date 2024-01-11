@@ -6,7 +6,7 @@ import "./css/map.css"
 const NSW = ({setStates, setShowFindForm, setShowMap}) => {
   const click = (e) => {
     e.preventDefault();
-    setStates(e.prevent.dataset.name)
+    setStates(e.target.dataset.name)
     setShowMap(true)
     setShowFindForm(false)   
   };
