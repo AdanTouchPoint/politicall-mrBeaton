@@ -39,19 +39,19 @@ const AusMap = ({modalText, states, setStates, setShowFindForm, showMap, setShow
             />
           <NSW
             state={states}
-            setState={setStates}
+            setStates={setStates}
             setShowFindForm={setShowFindForm}
             setShowMap={setShowMap}
           /> { /*RELEVANTE*/}
           <VIC
             state={states}
-            setState={setStates}
+            setStates={setStates}
             setShowFindForm={setShowFindForm}
             setShowMap={setShowMap}
           /> { /*RELEVANTE*/}
           <SA
             state={states}
-            setState={setStates}
+            setStates={setStates}
             setShowFindForm={setShowFindForm}
             setShowMap={setShowMap}
           /> { /*RELEVANTE*/}
