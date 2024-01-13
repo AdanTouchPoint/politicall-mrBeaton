@@ -62,101 +62,40 @@ const {formFields} = mainData
       [e.target.name]: e.target.value,
     });
   };
-  const fieldValidator = () => {
-    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    const isValidEmail = (email) => {
-      return emailRegex.test(email.trim());
-    };
-    for (let key in dataUser) {
-      console.log(key)
-      let value = dataUser[key];
-      if(value === '') return false
-      if (key === 'emailUser') {
-        let value = dataUser[key];
-       if (isValidEmail(value) === false ) return false
-      }
+  const isValidEmail = (email) => {
+    if(!email){
+      return false
     }
-  }
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email.trim());
+  };
+//REPARAR VALIDACION DE FORM
   const click = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    if (form.checkValidity() === false) {
+    if (!isValidEmail(dataUser.emailUser) || tac === false ||  form.checkValidity() === false || Object.getOwnPropertyNames(dataUser).length === 0 || dataUser.postalCode === undefined  || dataUser.emailUser === undefined  ) {
+      
       e.preventDefault();
       e.stopPropagation();
-    }
-    setValidated(true);
-    if ( fieldValidator() === false || 
-    tac  === false ) {
       setError(true);
+      // console.log('Field validator', fieldValidator())
       return;
     }
     setShowLoadSpin(true);
     setError(false);
-  
-    if (configurations.SearchBy === "postcode") {
-      fetchRepresentatives(
-        "GET",
-        backendURLBase,
-        endpoints.toGetRepresentativesByCp,
-        clientId,
-        `&postcode=${dataUser.postalCode}`,
-        setMp,
-        setSenator,
-        setShowLoadSpin,
-        setShowList
-      ).catch((error) => console.log("error", error));
-      scroll.scrollToBottom();
-     if (!mainData) return "loading datos";
-     if (!mp) return "loading datos";
-   }
-
-    if (configurations.SearchBy === "state") {
-      fetchRepresentatives(
-       "GET",
-       backendURLBase,
-       endpoints.toGetRepresentativesPerStates,
-       clientId,
-       `&state=${dataUser.state}`,
-       setMp,
-       setShowLoadSpin,
-       setShowList,
-       mp,
-       setSenator,
-       senator,
-       configurations.sendMany,
-       setAllDataIn
-     ).catch((error) => console.log("error", error));
-     scroll.scrollTo(1000)
-     if (!mainData) return "loading datos";
-     if (!mp) return "loading datos";
-   }
-   if (configurations.searchBy === "party") {
-      fetchRepresentatives(
-       "GET",
-       backendURLBase,
-       endpoints.toGetRepresentativesPerParty,
-       clientId,
-       `&party=${dataUser.party}`,
-       setMp,
-       setShowLoadSpin,
-       setShowList,
-       mp,
-       setSenator,
-       senator
-     ).catch((error) => console.log("error", error));
-     scroll.scrollTo(1000)
-     if (!mainData) return "loading datos";
-     if (!mp) return "loading datos";
-   }
+    fetchRepresentatives(
+      "GET",
+      backendURLBase,
+      endpoints.toGetRepresentativesByCp,
+      clientId,
+      `&postcode=${dataUser.postalCode}`,
+      setMp,
+      setSenator,
+      setShowLoadSpin,
+      setShowList
+    ).catch((error) => console.log("error", error));
+    scroll.scrollToBottom();
   };
-  if (!mainData) return "loading datos";
-  if (!mp) return "loading datos";
-  console.log("Main page data", mainData);
-  console.log("Dataquestions", dataQuestions);
-  console.log("senator data", senator);
-  console.log("tweets", tweet);
-  console.log("TYPdata", typData);
-  console.log("userdata", emailData);
   return (
     <div hidden={showFindForm}  className={"contenedor main-form-flex-container"}>
       <Card className="bg-dark card-img text-white main-image-container">
@@ -196,7 +135,6 @@ const {formFields} = mainData
             <h3 className="find-her-mp-text">{mainData.firstFormLabel1}</h3>
             <div className="fields-form">
             {formFields.map((field, key) => {
-              console.log(field, key);
               return field.type !== "state" ? (
                   <Form.Group className="field" key={key}>
                     <Form.Label className="select-label">{field.label}</Form.Label>
@@ -333,7 +271,6 @@ states.length > 0 ?
 ></Link>
   <h2>{mainData.positionName}</h2>
   <div className="representatives-container">
-    {console.log(mp)}
     {mp.length > 0 ? (
       configurations.filter === 'party' ? mp.filter((el)=> el.party === 'ALP').map((mps, index) => (
         <List

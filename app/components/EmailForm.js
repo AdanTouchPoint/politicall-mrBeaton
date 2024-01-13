@@ -74,7 +74,6 @@ const EmailForm = ({
     setError(false);
     if(configurations.sendMany === "Si") {
       const payload = await fetchData('GET', backendURLBaseServices, endpoints.toSendEmailBatch, clientId, `to=${allDataIn}&subject=${dataUser.subject}&firstName=${dataUser.userName}&emailData=${dataUser.emailUser}&text=${dataUser.text.replace(/\n\r?/g, "<br/>")}`)
-      console.log(payload.success)
       setShowLoadSpin(false)
       if (payload.success === true) {
           fetchLeads(true, backendURLBase, endpoints, clientId, dataUser, emailData)
@@ -103,7 +102,6 @@ const EmailForm = ({
       clientId,
       `questions=${urlEncode(JSON.stringify(questions))}&user=${urlEncode(JSON.stringify(dataUser))}`
     );
-    console.log(payload.success);
     setShowLoadSpin(false);
     if (payload.success === true) {
       fetchLeads(
@@ -239,17 +237,17 @@ const EmailForm = ({
           </Col>
         </div>
         {dataQuestions
-          ? dataQuestions.map((key, value) => (
+          ? dataQuestions.map((el, index) => (
               // eslint-disable-next-line react/jsx-key
-              <Col className="questions">
+              <Col className="questions" key={index}>
                 <Form.Group>
-                  <Form.Label> {key.questions} </Form.Label>
+                  <Form.Label> {el.questions} </Form.Label>
                   <Form.Control
                     id="message-emailform"
                     onChange={handleQuestions}
                     as="textarea"
                     type="text-area"
-                    name={`question${value + 1}`}
+                    name={`question${index + 1}`}
                     required
                   />
                 </Form.Group>

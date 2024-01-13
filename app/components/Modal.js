@@ -7,7 +7,6 @@ const Modal = ({ modalText, showModal, setShowModal,states}) => {
   };
     modalText.message= `Based on ${states}'s decision to not impose a state tax on health services in the next 2 years\n-Your chance to get a bulk billed GP is unchanged\n-Your gap fee to see a private GP is unchanged`
   const text = modalText.message.split('\n')
-  console.log(text);
   return (
     <div>
       {showModal && (
