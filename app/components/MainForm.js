@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/cjs/Button";
 import Alert from "react-bootstrap/Alert";
 import List from "./List";
-import ListSelect from "./ListSelect";
 import EmailForm from "./EmailForm";
 import ThankYou from "./ThankYou";
 import Card from "react-bootstrap/cjs/Card";
