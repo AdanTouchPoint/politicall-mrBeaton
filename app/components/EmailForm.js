@@ -67,34 +67,11 @@ const EmailForm = ({
       e.stopPropagation();
     }
     setValidated(true);
-    if (userName.trim() === "" || subject.trim() === "") {
+    if (userName?.trim() === "" || subject?.trim() === "") {
       setError(true);
       return;
     }
     setError(false);
-    if(configurations.sendMany === "Si") {
-      const payload = await fetchData('GET', backendURLBaseServices, endpoints.toSendEmailBatch, clientId, `to=${allDataIn}&subject=${dataUser.subject}&firstName=${dataUser.userName}&emailData=${dataUser.emailUser}&text=${dataUser.text.replace(/\n\r?/g, "<br/>")}`)
-      setShowLoadSpin(false)
-      if (payload.success === true) {
-          fetchLeads(true, backendURLBase, endpoints, clientId, dataUser, emailData)
-          setShowEmailForm(true)
-          setShowThankYou(false)
-      }
-      if(payload.success !== true) {
-      fetchLeads(false, backendURLBase, endpoints, clientId, dataUser, emailData)
-          return (
-              <Alert>
-                  El correo no ha sido enviado con éxito, por favor intente de nuevo más tarde
-                  <Button
-                  className={'button-email-form'}
-                  variant={'dark'}
-                  onClick={back}>
-                  Regresar
-              </Button>
-              </Alert>
-          )
-      }
-  }
     const payload = await fetchData(
       "GET",
       backendURLBaseServices,
@@ -146,7 +123,7 @@ const EmailForm = ({
     setShowFindForm(false);
     setShowEmailForm(true);
   };
-
+console.log(showEmailForm)
   return (
     <div className={"emailContainer"} hidden={showEmailForm}>
       {error ? (
@@ -208,16 +185,6 @@ const EmailForm = ({
                 name="state-city"
               />
             </Form.Group>
-          </Col>
-          <Col>
-            <InputGroup>
-              <Form.Control
-                readOnly
-                type="text"
-                name="cp"
-                placeholder={dataUser.zipCode}
-              />
-            </InputGroup>
           </Col>
         </div>
         <div className="input-subject">

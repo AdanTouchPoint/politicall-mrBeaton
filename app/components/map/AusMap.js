@@ -10,9 +10,11 @@ import NSW from "./NSW";
 import NT from "./NT";
 import Modal from "../Modal";
 
-const AusMap = ({modalText, states, setStates, setShowFindForm, showMap, setShowMap, showModal, setShowModal}) => {
+const AusMap = ({modalText, states, setStates, setHideMain, showMap, setShowMap, showModal, setShowModal}) => {
   return (
-    <div hidden={showMap} className="map" >
+    <div hidden={showMap} className="map">
+      <h1>Title</h1>
+      <p>instructions</p>
       <div className="map-container">
          <Modal
             states={states}
@@ -20,7 +22,7 @@ const AusMap = ({modalText, states, setStates, setShowFindForm, showMap, setShow
             showModal={showModal}
             setShowModal={setShowModal}
          />
-      <svg version="1.2" viewBox="0 0 1000 1222" xmlns="http://www.w3.org/2000/svg" >
+      <svg version="1.2" viewBox="0 0 1000 1222" xmlns="http://www.w3.org/2000/svg">
           <NT
             setStates={setStates}
             setShowModal={setShowModal}
@@ -40,19 +42,19 @@ const AusMap = ({modalText, states, setStates, setShowFindForm, showMap, setShow
           <NSW
             state={states}
             setStates={setStates}
-            setShowFindForm={setShowFindForm}
+            setHideMain={setHideMain}
             setShowMap={setShowMap}
           /> { /*RELEVANTE*/}
           <VIC
             state={states}
             setStates={setStates}
-            setShowFindForm={setShowFindForm}
+            setHideMain={setHideMain}
             setShowMap={setShowMap}
           /> { /*RELEVANTE*/}
           <SA
             state={states}
             setStates={setStates}
-            setShowFindForm={setShowFindForm}
+            setHideMain={setHideMain}
             setShowMap={setShowMap}
           /> { /*RELEVANTE*/}
       </svg>
@@ -60,5 +62,4 @@ const AusMap = ({modalText, states, setStates, setShowFindForm, showMap, setShow
     </div>
   );
 };
-
 export default AusMap;

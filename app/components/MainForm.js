@@ -36,8 +36,10 @@ const MainForm = ({
   configurations,
   allDataIn,
   setAllDataIn,
-  setShowFindForm, 
-  showFindForm
+  setShowFindForm,
+  showFindForm,
+  hideMain,
+  setHideMain
 }) => {
   const [showLoadSpin, setShowLoadSpin] = useState(false);
   const [showList, setShowList] = useState(true);
@@ -46,7 +48,7 @@ const MainForm = ({
   const [error, setError] = useState(false);
   const [showThankYou, setShowThankYou] = useState(true);
   const [tac, setTac] = useState(false);
-const {formFields} = mainData
+  const { formFields } = mainData;
   const handleTerms = (e) => {
     if (e.target.checked === true) {
       setTac(true);
@@ -63,22 +65,27 @@ const {formFields} = mainData
     });
   };
   const isValidEmail = (email) => {
-    if(!email){
-      return false
+    if (!email) {
+      return false;
     }
     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     return emailRegex.test(email.trim());
   };
-//REPARAR VALIDACION DE FORM
+console.log(typeof(states))
   const click = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
-    if (!isValidEmail(dataUser.emailUser) || tac === false ||  form.checkValidity() === false || Object.getOwnPropertyNames(dataUser).length === 0 || dataUser.postalCode === undefined  || dataUser.emailUser === undefined  ) {
-      
+    if (
+      !isValidEmail(dataUser.emailUser) ||
+      tac === false ||
+      form.checkValidity() === false ||
+      Object.getOwnPropertyNames(dataUser).length === 0 ||
+      dataUser.postalCode === undefined ||
+      dataUser.emailUser === undefined
+    ) {
       e.preventDefault();
       e.stopPropagation();
       setError(true);
-      // console.log('Field validator', fieldValidator())
       return;
     }
     setShowLoadSpin(true);
@@ -86,9 +93,8 @@ const {formFields} = mainData
     fetchRepresentatives(
       "GET",
       backendURLBase,
-      endpoints.toGetRepresentativesByCp,
-      clientId,
-      `&postcode=${dataUser.postalCode}`,
+      endpoints.toGetRepresentativesPerStates,
+      clientId,`&state=${states}&postcode=${dataUser.postalCode}`,
       setMp,
       setSenator,
       setShowLoadSpin,
@@ -97,7 +103,10 @@ const {formFields} = mainData
     scroll.scrollToBottom();
   };
   return (
-    <div hidden={showFindForm}  className={"contenedor main-form-flex-container"}>
+    <div hidden={hideMain}>
+    <div
+      className={"contenedor main-form-flex-container"}
+    >
       <Card className="bg-dark card-img text-white main-image-container">
         <Card.Header
           className="card-img"
@@ -116,11 +125,12 @@ const {formFields} = mainData
         </Card.ImgOverlay>
       </Card>
       <div className={"container instructions"}>{mainData.instruction}</div>
-      <div className={"form-container"}>
+      <div  hidden={showFindForm} className={"form-container"}>
         <div className={"container container-content"}>
           {error ? (
             <Alert variant={"danger"}>
-              Please fill all fields.  Also, please make sure there are no spaces before of after your email or postcode.
+              Please fill all fields. Also, please make sure there are no spaces
+              before of after your email or postcode.
             </Alert>
           ) : null}
           <Link
@@ -131,13 +141,20 @@ const {formFields} = mainData
             offset={-70}
             duration={500}
           ></Link>
-          <Form name='fm-find' onSubmit={click} noValidate validated={validated}>
+          <Form
+            name="fm-find"
+            onSubmit={click}
+            noValidate
+            validated={validated}
+          >
             <h3 className="find-her-mp-text">{mainData.firstFormLabel1}</h3>
             <div className="fields-form">
-            {formFields.map((field, key) => {
-              return field.type !== "state" ? (
+              {formFields.map((field, key) => {
+                return (
                   <Form.Group className="field" key={key}>
-                    <Form.Label className="select-label">{field.label}</Form.Label>
+                    <Form.Label className="select-label">
+                      {field.label}
+                    </Form.Label>
                     <Form.Control
                       id="emailInput-mainForm"
                       type={field.type}
@@ -147,45 +164,14 @@ const {formFields} = mainData
                       required
                     />
                   </Form.Group>
-            
-              ) : (
-states.length > 0 ? 
-<Form.Group className={"field"} key={key}>
-<Form.Label className="select-label">{field.label}</Form.Label>
- <Form.Select
-   aria-label="DefaulValue"
-   required
-   name={field.type}
-   id="stateSelect-mainForm"
-   onChange={handleChange}
- >
-   <option key={"vacio"} value={""}>
-     {field.placeholder}
-   </option>
-   {states.sort().map((estate) => (
-     <option key={estate} value={estate}>
-       {estate}
-     </option>
-   ))}
- </Form.Select>
-</Form.Group> 
-:
-   <Form.Group className="field" key={key}>
-   <Form.Label className="select-label">{field.label}</Form.Label>
-   <Form.Control
-     id="emailInput-mainForm"
-     type={field.type}
-     placeholder={field.placeholder}
-     name={field.type}
-     onChange={handleChange}
-     required
-   />
- </Form.Group>
-
-              );
-            })}
+                );
+              })}
             </div>
-            <Form.Group style={{ textAlign: "justify" }} className="field select-styles-form" controlId="conditions">
+            <Form.Group
+              style={{ textAlign: "justify" }}
+              className="field select-styles-form"
+              controlId="conditions"
+            >
               <Form.Check
                 name="conditions"
                 onClick={handleTerms}
@@ -204,7 +190,7 @@ states.length > 0 ?
             </Form.Group>
             <Form.Group>
               <Button
-              id="findButton-mainForm"
+                id="findButton-mainForm"
                 type={"submit"}
                 variant={"dark"}
                 size={"lg"}
@@ -225,116 +211,73 @@ states.length > 0 ?
               />
             ) : null}
           </Form>
-          { configurations.sendMany === "Si" ? (
             <div className={"container senators-container"} hidden={showList}>
-            <div className="note-container">
-              <p>{mainData.note}</p>
+              <div className="note-container">
+                <p>{mainData.note}</p>
+              </div>
+              <Link
+                activeClass="active"
+                to="section1"
+                spy={true}
+                smooth={true}
+                offset={70}
+                duration={500}
+              ></Link>
+              <h2>{mainData.positionName}</h2>
+              <div className="representatives-container">
+                {mp.length > 0 ? (
+                    mp.map((mps, index) => (
+                      <List
+                        setShowEmailForm={setShowEmailForm}
+                        setShowFindForm={setShowFindForm}
+                        showFindForm={showFindForm}
+                        emailData={emailData}
+                        setEmailData={setEmailData}
+                        dataUser={dataUser}
+                        mps={mps}
+                        clientId={clientId}
+                        key={index}
+                        tweet={tweet}
+                      />
+                    ))
+                  )
+                 : (
+                  <Alert variant="danger">
+                    No representatives have been found with the state that has
+                    provided us
+                  </Alert>
+                )}
+              </div>
+              <h2>{mainData.senatorLabel}</h2>
+              <div className="representatives-container">
+                {senator?.length > 0 ? (
+                  senator?.map((mps, index) => (
+                    <List
+                      setShowEmailForm={setShowEmailForm}
+                      setShowFindForm={setShowFindForm}
+                      showFindForm={showFindForm}
+                      emailData={emailData}
+                      setEmailData={setEmailData}
+                      dataUser={dataUser}
+                      mps={mps}
+                      clientId={clientId}
+                      key={index}
+                      tweet={tweet}
+                    />
+                  ))
+                ) : (
+                  <Alert variant="danger">
+                    No representatives have been found with the state that has
+                    provided us
+                  </Alert>
+                )}
+              </div>
             </div>
-            <h2>{mainData.positionName}</h2>
-            <div className="representatives-container">
-              {mp.length > 0 ? (
-                <ListSelect
-                  setShowEmailForm={setShowEmailForm}
-                  setShowFindForm={setShowFindForm}
-                  showFindForm={showFindForm}
-                  emailData={emailData}
-                  setEmailData={setEmailData}
-                  dataUser={dataUser}
-                  mp={mp}
-                  clientId={clientId}
-                  // key={index}
-                  tweet={tweet}
-                  allDataIn={allDataIn}
-                  setAllDataIn={setAllDataIn}
-                />
-              ) : (
-                <Alert variant="danger">
-                  No representatives have been found with the state that has
-                  provided us
-                </Alert>
-              )}
-            </div>
-          </div>
-)
- : ( 
-  <div className={"container senators-container"} hidden={showList}>
-  <div className="note-container">
-    <p>{mainData.note}</p>
-  </div>
-  <Link
-  activeClass="active"
-  to="section1"
-  spy={true}
-  smooth={true}
-  offset={70}
-  duration={500}
-></Link>
-  <h2>{mainData.positionName}</h2>
-  <div className="representatives-container">
-    {mp.length > 0 ? (
-      configurations.filter === 'party' ? mp.filter((el)=> el.party === 'ALP').map((mps, index) => (
-        <List
-          setShowEmailForm={setShowEmailForm}
-          setShowFindForm={setShowFindForm}
-          showFindForm={showFindForm}
-          emailData={emailData}
-          setEmailData={setEmailData}
-          dataUser={dataUser}
-          mps={mps}
-          clientId={clientId}
-          key={index}
-          tweet={tweet}
-        />
-      )) : mp.map((mps, index) => (
-        <List
-          setShowEmailForm={setShowEmailForm}
-          setShowFindForm={setShowFindForm}
-          showFindForm={showFindForm}
-          emailData={emailData}
-          setEmailData={setEmailData}
-          dataUser={dataUser}
-          mps={mps}
-          clientId={clientId}
-          key={index}
-          tweet={tweet}
-        />
-      ))
-    ) : (
-      <Alert variant="danger">
-        No representatives have been found with the state that has
-        provided us
-      </Alert>
-    )}
-  </div>
-   <h2>{mainData.senatorLabel}</h2>
-  <div className="representatives-container">
-    {senator.length > 0 ? (
-    senator.map((mps, index) => (
-      <List
-        setShowEmailForm={setShowEmailForm}
-        setShowFindForm={setShowFindForm}
-        showFindForm={showFindForm}
-        emailData={emailData}
-        setEmailData={setEmailData}
-        dataUser={dataUser}
-        mps={mps}
-        clientId={clientId}
-        key={index}
-        tweet={tweet}
-      />
-    ))
-    ) : (
-      <Alert variant="danger">
-        No representatives have been found with the state that has
-        provided us
-      </Alert>
-    )}
-  </div>
-</div>
- )}
         </div>
       </div>
-      <EmailForm
+    </div>
+    <div className={"contenedor main-form-flex-container"}>     
+    <EmailForm
         setShowThankYou={setShowThankYou}
         setShowFindForm={setShowFindForm}
         setShowEmailForm={setShowEmailForm}
@@ -366,6 +309,7 @@ states.length > 0 ?
         typData={typData}
         showThankYou={showThankYou}
       />
+    </div>
     </div>
   );
 };

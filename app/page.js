@@ -31,7 +31,7 @@ function Home() {
       const [clientId] = useState(`${process.env.NEXT_PUBLIC_CLIENT_ID}`)
       const [endpoints] = useState({
         toGetConfs:'/confs/',
-        toGetRepresentativesPerStates:'/representatives-state/',
+        toGetRepresentativesPerStates:'/demo-test-state/',
         toGetRepresentativesPerParty:'/representatives-party/',
         toGetAllRepresentatives:'/all-senators/',
         toGetRepresentativesByCp:'/find-mp-demo/',
@@ -42,11 +42,12 @@ function Home() {
         toSaveLeads:'/leads/',
         toSendEmails:'/email-builder/',
         toGetAllLeads:'/leads/',
-        toSendEmailBatch:'/email-batch/'
+        toSendEmailBatch:'/email-batch/',
+        
       })
     const [mp, setMp] = useState([])
     const [senator, setSenator] = useState([])
-    const [states, setStates] = useState([])
+    const [states, setStates] = useState('')
     const [tweet, setTweet] = useState('')
     const [dataQuestions,setDataQuestions] = useState()
     const [questions, setQuestions] = useState({
@@ -80,7 +81,7 @@ function Home() {
     })
     const [loading, setLoading] = useState(true)
     const [allDataIn, setAllDataIn] = useState([])
-    const [showFindForm, setShowFindForm] = useState(true);
+    const [showFindForm, setShowFindForm] = useState(false);
     const [showMap,setShowMap] = useState(false)
     const [showModal, setShowModal] = useState(false);
     const [ modalText, setModalText] = useState({
@@ -88,6 +89,8 @@ function Home() {
       message: "",
       button: "close"
     })
+    const [hideMain, setHideMain]= useState(true)
+
 
    // const adanCID ='636dadcf2626f92aade6664a'
     useEffect(() => {
@@ -120,11 +123,10 @@ function Home() {
         !loading && (
           <div>
             <AusMap
+              setHideMain={setHideMain}
               modalText={modalText}
               showMap={showMap}
               setShowMap={setShowMap}
-              showFindForm={showFindForm}
-              setShowFindForm={setShowFindForm}
               states={states}
               setStates={setStates}
               showModal={showModal}
@@ -132,6 +134,8 @@ function Home() {
             />
           
           <MainForm
+              hideMain={hideMain}
+              setHideMain={setHideMain}
               showFindForm={showFindForm}
               setShowFindForm={setShowFindForm}
               configurations={configurations}
