@@ -14,8 +14,8 @@ import Modal from "../Modal";
 const AusMap = ({modalText, states, setStates, setHideMain, showMap, setShowMap, showModal, setShowModal}) => {
   return (
     <div hidden={showMap} className="map">
-      <h1>Title</h1>
-      <p>instructions</p>
+      <h1>GPs Slammed by Payroll Tax</h1>
+      <p>Select your state/territory below to get started</p>
       <div className="map-container">
          <Modal
             states={states}
