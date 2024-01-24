@@ -8,6 +8,7 @@ import SA from "./SA";
 import QLD from "./QLD";
 import NSW from "./NSW";
 import NT from "./NT";
+import ACT from "./ACT";
 import Modal from "../Modal";
 
 const AusMap = ({modalText, states, setStates, setHideMain, showMap, setShowMap, showModal, setShowModal}) => {
@@ -36,6 +37,10 @@ const AusMap = ({modalText, states, setStates, setHideMain, showMap, setShowMap,
             setShowModal={setShowModal}
             />
           <TAS
+            setStates={setStates}
+            setShowModal={setShowModal}
+            />
+            <ACT
             setStates={setStates}
             setShowModal={setShowModal}
             />

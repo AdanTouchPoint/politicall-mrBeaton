@@ -10,7 +10,7 @@ import ThankYou from "./ThankYou";
 import Card from "react-bootstrap/cjs/Card";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { fetchRepresentatives } from "../assets/petitions/fetchRepresentatives";
-
+import TAC from "./TAC";
 const MainForm = ({
   dataUser,
   setDataUser,
@@ -47,9 +47,12 @@ const MainForm = ({
   const [error, setError] = useState(false);
   const [showThankYou, setShowThankYou] = useState(true);
   const [tac, setTac] = useState(false);
+  const [showTAC, setShowTAC] = useState(false)
   const { formFields } = mainData;
   const handleTerms = (e) => {
+    e.preventDefault
     if (e.target.checked === true) {
+      setShowTAC(true)
       setTac(true);
     } else {
       setTac(false);
@@ -125,6 +128,10 @@ console.log(typeof(states))
       </Card>
       <div className={"container instructions"}>{mainData.instruction}</div>
       <div  hidden={showFindForm} className={"form-container"}>
+        <TAC
+        setShowTAC={setShowTAC}
+        showTAC={showTAC}
+        />
         <div className={"container container-content"}>
           {error ? (
             <Alert variant={"danger"}>
@@ -176,14 +183,9 @@ console.log(typeof(states))
                 onClick={handleTerms}
                 required
                 label={
-                  <a
-                    target={"_blank"}
-                    rel={"noreferrer"}
-                    href={mainData.termsAndConditionsURL}
-                  >
-                    {" "}
+                  <p>
                     {mainData.termsAndConditionsTxt}
-                  </a>
+                  </p>
                 }
               />
             </Form.Group>
