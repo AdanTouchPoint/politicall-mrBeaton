@@ -22,7 +22,10 @@ width: 50%;
     stroke-width: 2px;
 }
 .map-container :hover {
-fill: rgb(42, 140, 165);
+fill: rgb(35, 161, 97);
+}
+.map-container .red :hover {
+fill: rgb(161, 35, 35);
 }
 .map-container > svg {
     padding-left: 450px;

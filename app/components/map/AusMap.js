@@ -11,56 +11,66 @@ import NT from "./NT";
 import ACT from "./ACT";
 import Modal from "../Modal";
 
-const AusMap = ({modalText, states, setStates, setHideMain, showMap, setShowMap, showModal, setShowModal}) => {
+const AusMap = ({mainData,setMainData,setModalText,modalText, states, setStates, setHideMain, showMap, setShowMap, showModal, setShowModal}) => {
   return (
     <div hidden={showMap} className="map">
-      <h1>GPs Slammed by Payroll Tax</h1>
-      <p>Select your state/territory below to get started</p>
+      <h1>Does your state care about your care?</h1>
+      <p> Seeing your GP is about to get a lot harder depending on what state you live in. Click on the your state or territory below to find out more. </p>
       <div className="map-container">
          <Modal
             states={states}
+            setHideMain={setHideMain}
+            setShowMap={setShowMap}
             modalText={modalText}
             showModal={showModal}
             setShowModal={setShowModal}
          />
       <svg version="1.2" viewBox="0 0 1000 1222" xmlns="http://www.w3.org/2000/svg">
           <NT
+            setModalText={setModalText}
             setStates={setStates}
             setShowModal={setShowModal}
             />
           <QLD
+            setModalText={setModalText}
             setStates={setStates}
             setShowModal={setShowModal}
             />
           <WA
+            setModalText={setModalText}
             setStates={setStates}
             setShowModal={setShowModal}
             />
           <TAS
+            setModalText={setModalText}
             setStates={setStates}
             setShowModal={setShowModal}
             />
             <ACT
+            setModalText={setModalText}
             setStates={setStates}
             setShowModal={setShowModal}
             />
           <NSW
-            state={states}
+            mainData={mainData}
+            setMainData={setMainData}
             setStates={setStates}
-            setHideMain={setHideMain}
-            setShowMap={setShowMap}
+            setShowModal={setShowModal}
+            setModalText={setModalText}
           /> { /*RELEVANTE*/}
           <VIC
-            state={states}
+            mainData={mainData}
+            setMainData={setMainData}
             setStates={setStates}
-            setHideMain={setHideMain}
-            setShowMap={setShowMap}
+            setShowModal={setShowModal}
+            setModalText={setModalText}
           /> { /*RELEVANTE*/}
           <SA
-            state={states}
+            mainData={mainData}
+            setMainData={setMainData}
             setStates={setStates}
-            setHideMain={setHideMain}
-            setShowMap={setShowMap}
+            setShowModal={setShowModal}
+            setModalText={setModalText}
           /> { /*RELEVANTE*/}
       </svg>
       </div>

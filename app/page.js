@@ -123,6 +123,9 @@ function Home() {
         !loading && (
           <div>
             <AusMap
+              mainData={mainData}
+              setMainData={setMainData}
+              setModalText={setModalText}
               setHideMain={setHideMain}
               modalText={modalText}
               showMap={showMap}

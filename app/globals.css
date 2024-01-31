@@ -10,6 +10,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
+.instructions > p {
+  max-width: 1150px;
+  font-size: 15px;
+  margin-bottom: 0.1rem;
+  letter-spacing: 2px;
+  word-spacing: 10px;
+}
 .contenedor{
   max-width: 1140px;
   margin: 0 auto;
@@ -216,8 +223,15 @@ display: flex;
     text-align: left;
   }
   .instructions{
-    padding: 20px;
+    padding: 35px 10px;
     max-width: 1150px;
+  }
+  .instructions > p {
+    max-width: 1150px;
+    font-size: 15px;
+    margin-bottom: 0.1rem;
+    letter-spacing: 2px;
+    word-spacing: 10px;
   }
   .container-content{
     text-align: center;
@@ -285,7 +299,7 @@ display: flex;
 }
 @media (min-width: 1024px) {
   .map-container > svg {
-    padding-top: 10px;
-    padding-left: 50%;
+    padding-top: 35px;
+    padding-left: 55%;
 }
 }

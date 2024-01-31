@@ -51,6 +51,7 @@ const MainForm = ({
   const { formFields } = mainData;
   const handleTerms = (e) => {
     e.preventDefault
+    console.log('here')
     if (e.target.checked === true) {
       setShowTAC(true)
       setTac(true);
@@ -126,7 +127,13 @@ console.log(typeof(states))
           </Card.Body>
         </Card.ImgOverlay>
       </Card>
-      <div className={"container instructions"}>{mainData.instruction}</div>
+      <div className={"container instructions"}>{mainData.instruction
+        .split('\n')
+        .map((el,index)=> (
+          <p key={index}> {el} <br/> </p>
+        ))
+      }
+      </div>
       <div  hidden={showFindForm} className={"form-container"}>
         <TAC
         setShowTAC={setShowTAC}

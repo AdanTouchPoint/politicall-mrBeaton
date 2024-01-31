@@ -9,6 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0; /* Inicialmente oculto */
+  visibility: hidden; /* Inicialmente oculto */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave */
 }
 
 .modal-content-own {
@@ -17,6 +20,8 @@
   border-radius: 8px;
   text-align: center;
   width: 100%;
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 1s ease; /* Transición suave */
 }
 
 /* Estilo para el botón de cerrar (puedes personalizarlo según tus necesidades) */
@@ -27,6 +32,10 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+.modal-overlay.active, .modal-content-own.active {
+  opacity: 1; /* Mostrar el modal */
+  visibility: visible; /* Mostrar el modal */
 }
 @media screen and (min-width: 768px) {
   .modal-content-own {

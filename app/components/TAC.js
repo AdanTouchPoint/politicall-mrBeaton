@@ -7,14 +7,13 @@ const TAC = ({ showTAC, setShowTAC,states}) => {
   };
   let tittle = 'tittle'
   let button = 'close'
-    let message = `message`
+  let message = `message`
   const text = message.split('\n')
   return (
     <div>
-      {showTAC && (
-        <div className="modal-overlay" onClick={closeModal}>
+        <div className={`modal-overlay ${showTAC ? 'active' : ''}`} onClick={closeModal}>
           <div
-            className="modal-content-own"
+            className={`modal-content-own ${showTAC ? 'active' : ''}`}
             onClick={(e) => e.stopPropagation()}
           >
             <h2>{tittle}</h2>
@@ -24,7 +23,6 @@ const TAC = ({ showTAC, setShowTAC,states}) => {
             <button onClick={closeModal}>{button}</button>
           </div>
         </div>
-      )}
     </div>
   );
 };
