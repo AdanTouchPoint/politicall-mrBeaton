@@ -13,9 +13,10 @@ code {
 .instructions > p {
   max-width: 1150px;
   font-size: 15px;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0rem;
   letter-spacing: 2px;
   word-spacing: 10px;
+  line-height: 30px;
 }
 .contenedor{
   max-width: 1140px;
@@ -29,7 +30,7 @@ code {
   max-width: 1150px;
   max-height: 350px;
   min-width: 100%;
-  min-height: 350px;
+  min-height: 250px;
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -40,11 +41,16 @@ code {
 .instructions{
   padding: 35px;
   max-width: 1150px;
+  border-radius: 10px ;
+  background-color: #ffffff;
+  margin:20px 0;
 }
 .form-container{
-  background-color: #f4f4f4;
+  background-color: #f0f7f4; /* Fondo del formulario */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
   max-width: 1150px;
   height: 100%;
+  border-radius: 10px ;
 }
 .select-styles-form{
   margin:25px auto
@@ -62,11 +68,28 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  border-radius: 10px;
 }
 .field {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  width:60%;
-  text-align: left;
+  width: 60%;
+  margin-bottom: 20px;
+}
+#findButton-mainForm{
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color de texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cursor al pasar el ratón */
+  font-size: 16px; /* Tamaño de fuente */
+}
+/* Estilo para el botón hover */
+#findButton-mainForm:hover {
+  background-color: #45a049; /* Cambio de color en hover */
 }
 .container-content{
   text-align: center;
@@ -89,9 +112,9 @@ code {
   padding: 0px 15px;
 }
 .select-label{
-  margin-top: 30px;
-  margin-bottom: 0px;
-  font-size: 19px;
+  color: #4a4a4a; /* Color de texto */
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 .form-group{
   max-width: 1050px;
@@ -104,22 +127,34 @@ code {
 }
 .senators-container{
   text-align: justify;
+  background-color: #d1f2ff45; /* Color de fondo */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 .representatives-container{
-  padding: 20px 0px;
-}
+  padding: 20px 0px; /* Espaciado interno */
+ 
+  border-radius: 10px; /* Borde redondeado */
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */ 
+} 
 .input-subject{
   padding-top: 5px;
 }
 .input-text-form{
-  padding-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc; /* Borde del input */
+  border-radius: 5px;
+  font-size: 16px;
 }
 .buttonsContainer{
   display:flex;
   padding:7px 7px;
-  background-color: white;
+  background-color: #eafff6;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin: 20px; /* Margen inferior */
+  border-radius: 5px; /* Borde redondeado */
+  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
 }
 .buttons-container-email-form{
   text-align: center;
@@ -132,6 +167,7 @@ code {
   flex-direction: column;
   justify-content: center;
   row-gap: 10px;
+  margin: 20px;
 }
 .formEmail {
 display: flex;
@@ -143,15 +179,27 @@ display: flex;
 
 }
 .list-content-location{
-
     padding-top: 10px;
+    margin: 20px;
 }
 .list-buttons-content{
   padding:5px;
 }
 .list-button{
-  max-width: 110px;
-  width: 100% ;
+  max-width: 110px; /* Anchura máxima */
+  width: 100%; /* Anchura completa */
+  padding: 10px 20px; /* Espaciado interno */
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color de texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cursor al pasar el ratón */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.3s ease; /* Transición suave */;
+}
+/* Estilo para el botón hover */
+.list-button:hover {
+  background-color: #45a049; /* Cambio de color en hover */
 }
 .list-notweeter-text{
   text-align: center;

@@ -13,7 +13,7 @@ const TAC = ({ showTAC, setShowTAC,states}) => {
     <div>
         <div className={`modal-overlay ${showTAC ? 'active' : ''}`} onClick={closeModal}>
           <div
-            className={`modal-content-own ${showTAC ? 'active' : ''}`}
+            className={`modal-content-tac ${showTAC ? 'active' : ''}`}
             onClick={(e) => e.stopPropagation()}
           >
             <h2>{tittle}</h2>

@@ -1,5 +1,5 @@
 .map {
-background-color: rgb(218, 218, 219);
+background-color: #d8eefa;
 display: flex;
 place-content: center center;
 text-align: center;
@@ -17,15 +17,15 @@ width: 50%;
 }
 
 .map-container path {
-    fill: rgb(69, 69, 70);
-    stroke: black;
+    fill: rgb(250, 227, 164);
+    stroke: rgb(0, 0, 0);
     stroke-width: 2px;
 }
-.map-container :hover {
-fill: rgb(35, 161, 97);
+.map-container .green :hover {
+fill: #23a161;
 }
 .map-container .red :hover {
-fill: rgb(161, 35, 35);
+fill: rgb(247, 94, 94);
 }
 .map-container > svg {
     padding-left: 450px;

@@ -29,13 +29,13 @@ const Modal = ({ modalText, showModal, setShowModal, states,  setHideMain, setSh
                    <div key={index}> {el} <br/> </div>
                 ))}</p>
              <div>
-                <button onClick={closeModal}>{modalText.button}</button> 
-             </div>
-             {
+                <button  className="modal-button-red" onClick={closeModal}>{modalText.button}</button>
+                {
               toMainPage(states,allowed) && ( 
-                <button onClick={next}> Next </button>
+                <button className="modal-button-green" onClick={next}> Next </button>
               )
-             }   
+             }  
+             </div> 
           </div>
         </div>
     </div>
