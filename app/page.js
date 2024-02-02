@@ -121,7 +121,7 @@ function Home() {
       }
       {
         !loading && (
-          <div>
+          <div className='background-general'>
             <AusMap
               mainData={mainData}
               setMainData={setMainData}

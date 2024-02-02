@@ -10,6 +10,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
+.background-general{
+  background-image: url('./assets/images/fondo.png');
+}
 .instructions > p {
   max-width: 1150px;
   font-size: 15px;
@@ -17,13 +20,14 @@ code {
   letter-spacing: 2px;
   word-spacing: 10px;
   line-height: 30px;
+  background-color: rgba(255, 255, 255, 0.171);
 }
 .contenedor{
   max-width: 1140px;
   margin: 0 auto;
 }
 .main-image-container{
-  margin-top:20px ;
+  margin-top:0px ;
 }
 .card-img{
   background-color: rgba(0,0,0,.03);
@@ -42,7 +46,6 @@ code {
   padding: 35px;
   max-width: 1150px;
   border-radius: 10px ;
-  background-color: #ffffff;
   margin:20px 0;
 }
 .form-container{
@@ -58,8 +61,7 @@ code {
 .main-form-flex-container{
   display: block;
   justify-content: center;
-  margin-bottom: 50px;
-  background-image: url('./assets/images/fondo.png');
+  padding:20px;
 }
 .find-her-mp-text{
   padding: 0px 0;
@@ -234,7 +236,7 @@ display: flex;
     margin: 0 auto;
   }
   .main-form-flex-container{
-    margin-bottom: 20px;
+    padding: 20px;
   }
   .formEmail {
     display: block;
@@ -312,7 +314,6 @@ display: flex;
     margin: 0 auto;
   }
   .main-form-flex-container{
-    margin-bottom: 20px;
     background-image: url('./assets/images/fondo.png');
   }
   .formEmail {
