@@ -14,6 +14,7 @@ import Modal from "../Modal";
 const AusMap = ({mainData,setMainData,setModalText,modalText, states, setStates, setHideMain, showMap, setShowMap, showModal, setShowModal}) => {
   return (
     <div hidden={showMap} className="map">
+      <div className="header-img"></div>
       <h1>Does your state care about your care?</h1>
       <p> Seeing your GP is about to get a lot harder depending on what state you live in. Click on the your state or territory below to find out more. </p>
       <div className="map-container">

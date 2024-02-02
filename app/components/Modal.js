@@ -26,7 +26,7 @@ const Modal = ({ modalText, showModal, setShowModal, states,  setHideMain, setSh
           >
             <h2>{modalText.title}</h2>
                 <p> { text.map((el,index)=> (
-                   <div key={index}> {el} <br/> </div>
+                   <p key={index}> {el} <br/> </p>
                 ))}</p>
              <div>
                 <button  className="modal-button-red" onClick={closeModal}>{modalText.button}</button>

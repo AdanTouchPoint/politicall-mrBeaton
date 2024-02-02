@@ -9,7 +9,9 @@ const NT = ({setShowModal, setStates, setModalText}) => {
     setStates(e.target.dataset.name)
     setModalText({
       title: 'Attention',
-      message:`Based on ${e.target.dataset.name}'s decision to not impose a state tax on health services in the next 2 years\n-Your chance to get a bulk billed GP is unchanged\n-Your gap fee to see a private GP is unchanged`,
+      message:`Based on ${e.target.dataset.name}'s decision to not impose a state tax on health services in the next 2 years:
+      •Your chance to get a bulk billed GP is unchanged
+      •Your gap fee to see a private GP is unchanged`,
       button: 'Close'
     })
     setShowModal(true)

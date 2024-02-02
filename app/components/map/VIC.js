@@ -10,10 +10,9 @@ const VIC = ({mainData,setMainData,setStates, setShowModal, setModalText}) => {
     setShowModal(true)
     setModalText({
       title: 'Attention',
-      message:`${e.target.dataset.name} doesn’t care
-      Based on ${e.target.dataset.name}'s plans to enforce a State Tax on GP clinics over the next 2 years…
-      - Your chance to get a bulk-billed GP appointment will reduce by 35%
-      - Your gap fee to see a private GP will increase by an average of $11
+      message:`Based on Victoria's plans to enforce a State Tax on GP clinics over the next 2 years…
+        • Your chance to get a bulk-billed GP appointment will reduce by 35%
+        • Your gap fee to see a private GP will increase by an average of $11
       Concerned about how Victoria’s state tax will impact your care?
       Then let your local MP know about it (link to portal)`,
       button: 'Close'
@@ -22,8 +21,8 @@ const VIC = ({mainData,setMainData,setStates, setShowModal, setModalText}) => {
       ...mainData,
       instruction: `Victoria doesn’t care!
       Based on Victoria’s plans to enforce a State Tax on GP clinics over the next 2 years…
-        - Your chance to get a bulk-billed GP appointment will reduce by 35%.
-        - Your gap fee to see a private GP will increase by an average of $11.
+      • Your chance to get a bulk-billed GP appointment will reduce by 35%.
+      • Your gap fee to see a private GP will increase by an average of $11.
       Concerned about how Victoria’s state tax will impact your care?
       Have your say and contact your local MP today.`
     })
