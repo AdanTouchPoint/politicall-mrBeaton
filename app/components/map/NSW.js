@@ -14,8 +14,8 @@ const NSW = ({mainData, setMainData, setStates, setShowModal, setModalText}) => 
       • Your chance to get a bulk-billed GP appointment will reduce by 35%
       • Your gap fee to see a private GP will increase by an average of $11
       Concerned about how NSW state tax will impact your care?
-      Then let your local MP know about it (link to portal)`,
-      button: 'Close'
+      Then let your local MP know about it.`,
+      button: 'Take Action!'
     })
     setMainData({
       ...mainData,

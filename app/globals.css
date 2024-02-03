@@ -164,6 +164,8 @@ code {
 }
 .button-email-form{
   margin: 20px;
+  background-color: #45a049;
+  border-color: #fff0;
 }
 .buttons{
   display: flex;
@@ -177,10 +179,13 @@ display: flex;
  column-gap: 20px;
 }
 .emailContainer{
-  background-color: #f4f4f4;
   padding:50px;
-
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  background-color: #f0f7f4; /* Fondo del formulario */
 }
+
+
 .list-content-location{
     padding-top: 10px;
     margin: 20px;
@@ -213,6 +218,9 @@ display: flex;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  background-color: #f0f7f4; /* Fondo del formulario */
 }
 .typ-content{
   min-width: 1100px;
@@ -224,8 +232,12 @@ display: flex;
   row-gap: 20px;
   max-width: 700px;
   width: 100%;
-  background-color: #f4f4f4;
+
   padding: 25px;
+}
+.typ-content > button {
+  background-color: #4CAF50;
+  border-color: #fff0;
 }
 .capitalize-style{
   text-transform: capitalize;
@@ -347,7 +359,8 @@ display: flex;
   h3 > .typ-content {
     line-height: 1.7em !important;
        
-  }
+  }´
+
   .map-container > svg {
     padding-bottom: 208px;
     padding-top: 100px;

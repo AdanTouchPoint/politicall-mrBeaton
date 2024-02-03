@@ -28,6 +28,10 @@ width: 50%;
     font-weight: bold;
     color: #23a161;
 }
+.map > p {
+    font-weight: bold;
+    font-size: 20px; 
+}
 .map-container path {
     fill: rgb(250, 227, 164);
     stroke: rgb(0, 0, 0);
