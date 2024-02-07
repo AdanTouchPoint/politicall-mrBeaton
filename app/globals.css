@@ -11,7 +11,7 @@ code {
   monospace;
 }
 .background-general{
-  background-image: url('./assets/images/fondo.png');
+background-color: white;
 }
 .instructions > p {
   max-width: 1150px;
@@ -377,6 +377,6 @@ display: flex;
     padding-top: 50px;
     padding-left: 1px;
     width: 100%;
-    margin-left: 50%;
+
 }
 }

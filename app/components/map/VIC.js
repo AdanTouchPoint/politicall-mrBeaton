@@ -3,11 +3,12 @@
 import React from 'react';
 import "./css/map.css"
 
-const VIC = ({mainData,setMainData,setStates, setShowModal, setModalText}) => {
+const VIC = ({mainData,setMainData,setStates, setShowModal, setModalText, setMousePosition}) => {
   const click = (e) => {
     e.preventDefault();
     setStates(e.target.dataset.name)
     setShowModal(true)
+    setMousePosition({ x: e.clientX, y: e.clientY + 145 })
     setModalText({
       title: 'Attention',
       message:`Based on Victoria's plans to enforce a State Tax on GP clinics over the next 2 years…

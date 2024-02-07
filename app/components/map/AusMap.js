@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useRef } from "react";
 import "./css/map.css";
 import WA from "./WA";
 import VIC from "./VIC";
@@ -11,69 +11,123 @@ import NT from "./NT";
 import ACT from "./ACT";
 import Modal from "../Modal";
 
-const AusMap = ({mainData,setMainData,setModalText,modalText, states, setStates, setHideMain, showMap, setShowMap, showModal, setShowModal}) => {
+const AusMap = ({
+  mainData,
+  setMainData,
+  setModalText,
+  modalText,
+  states,
+  setStates,
+  setHideMain,
+  showMap,
+  setShowMap,
+  showModal,
+  setShowModal,
+}) => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // Referencia al elemento del modal
+  const modalRef = useRef(null);
+  const handleOutsideClick = (e) => {
+    console.log(modalRef);
+  };
+  const closeModal =() =>{
+    setShowModal(false)
+  }
   return (
-    <div hidden={showMap} className="map">
-      <div className="header-img"></div>
-      <h1>Does your state care about your care?</h1>
-      <p> Seeing your GP is about to get a lot harder depending on what state you live in. Click on the your state or territory below to find out more. </p>
-      <div className="map-container">
-         <Modal
+    <div>
+      <div onMouseOver={closeModal} className="top-nav">
+        <p>Stop Swamping GPs</p>
+        <button>GET IN TOUCH </button>
+      </div>
+      <div onClick={handleOutsideClick} hidden={showMap} className="map">
+        <div className="text-map">
+          <h1 className="title-black">Does your state</h1>
+          <h1 className="title-green"> care about your care?</h1>
+          <p>
+            Seeing your GP is about to get a lot harder depending on what state
+            you live in.
+          </p>
+          <h2>Click on the your state or territory below to find out more.</h2>
+          <svg width="100" height="100">
+            <path x="500" y="650" d="M 10 50 Q 50 90 90 50" stroke="black" fill="none" />
+            <path d="M 90 45 L 100 50 L 90 55 Z" fill="black" transform="rotate(-30, 90, 50)" />
+          </svg>
+        </div>
+        <div onMouseOver={closeModal} className="map-container">
+          <Modal
+            modalRef={modalRef}
             states={states}
             setHideMain={setHideMain}
             setShowMap={setShowMap}
             modalText={modalText}
             showModal={showModal}
             setShowModal={setShowModal}
-         />
-      <svg version="1.2" viewBox="0 0 1000 1222" xmlns="http://www.w3.org/2000/svg">
-          <NT
-            setModalText={setModalText}
-            setStates={setStates}
-            setShowModal={setShowModal}
+            mousePosition={mousePosition}
+          />
+          <svg
+            version="1.2"
+            viewBox="0 0 1000 900"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <NT
+              setMousePosition={setMousePosition}
+              setModalText={setModalText}
+              setStates={setStates}
+              setShowModal={setShowModal}
             />
-          <QLD
-            setModalText={setModalText}
-            setStates={setStates}
-            setShowModal={setShowModal}
+            <QLD
+              setMousePosition={setMousePosition}
+              setModalText={setModalText}
+              setStates={setStates}
+              setShowModal={setShowModal}
             />
-          <WA
-            setModalText={setModalText}
-            setStates={setStates}
-            setShowModal={setShowModal}
+            <WA
+              setMousePosition={setMousePosition}
+              setModalText={setModalText}
+              setStates={setStates}
+              setShowModal={setShowModal}
             />
-          <TAS
-            setModalText={setModalText}
-            setStates={setStates}
-            setShowModal={setShowModal}
+            <TAS
+              setMousePosition={setMousePosition}
+              setModalText={setModalText}
+              setStates={setStates}
+              setShowModal={setShowModal}
             />
             <ACT
-            setModalText={setModalText}
-            setStates={setStates}
-            setShowModal={setShowModal}
+              setMousePosition={setMousePosition}
+              setModalText={setModalText}
+              setStates={setStates}
+              setShowModal={setShowModal}
             />
-          <NSW
-            mainData={mainData}
-            setMainData={setMainData}
-            setStates={setStates}
-            setShowModal={setShowModal}
-            setModalText={setModalText}
-          /> { /*RELEVANTE*/}
-          <VIC
-            mainData={mainData}
-            setMainData={setMainData}
-            setStates={setStates}
-            setShowModal={setShowModal}
-            setModalText={setModalText}
-          /> { /*RELEVANTE*/}
-          <SA
-            mainData={mainData}
-            setMainData={setMainData}
-            setStates={setStates}
-            setShowModal={setShowModal}
-            setModalText={setModalText}
-          /> { /*RELEVANTE*/}
-      </svg>
+            <NSW
+              setMousePosition={setMousePosition}
+              mainData={mainData}
+              setMainData={setMainData}
+              setStates={setStates}
+              setShowModal={setShowModal}
+              setModalText={setModalText}
+            />{" "}
+            {/*RELEVANTE*/}
+            <VIC
+              setMousePosition={setMousePosition}
+              mainData={mainData}
+              setMainData={setMainData}
+              setStates={setStates}
+              setShowModal={setShowModal}
+              setModalText={setModalText}
+            />{" "}
+            {/*RELEVANTE*/}
+            <SA
+              setMousePosition={setMousePosition}
+              mainData={mainData}
+              setMainData={setMainData}
+              setStates={setStates}
+              setShowModal={setShowModal}
+              setModalText={setModalText}
+            />{" "}
+            {/*RELEVANTE*/}
+          </svg>
+        </div>
       </div>
     </div>
   );

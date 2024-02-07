@@ -1,7 +1,7 @@
 // Modal.js
 import React from "react";
 import "./modal.css"; // Importa tus estilos CSS
-const Modal = ({ modalText, showModal, setShowModal, states,  setHideMain, setShowMap}) => {
+const Modal = ({modalRef, modalText, showModal, setShowModal, states,  setHideMain, setShowMap, mousePosition}) => {
   const closeModal = () => {
     setShowModal(false);
   };
@@ -19,7 +19,7 @@ const Modal = ({ modalText, showModal, setShowModal, states,  setHideMain, setSh
   const text = modalText.message.split('\n')
   return (
     <div>
-        <div className={`modal-overlay ${showModal ? 'active' : ''}`} onClick={closeModal}>
+        <div ref={modalRef} className={`modal-overlay ${showModal ? 'active' : ''}`} style={{ top: mousePosition.y, left: mousePosition.x }} onClick={closeModal}>
           <div
             className={`modal-content-own ${showModal ? 'active' : ''}`}
             onClick={(e) => e.stopPropagation()}

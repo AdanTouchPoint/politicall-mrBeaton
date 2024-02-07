@@ -1,16 +1,14 @@
 .map {
 /*background-color: #d8eefa;*/
-background-image: url('../../../assets/images/fondo.png');
 display: flex;
 place-content: center center;
 text-align: center;
 padding: 30px;
 transition: opacity 1s ease-in-out; 
-flex-direction: column;
+flex-direction: row;
 
 }
 .header-img{
-    background-image: url('../../../assets/images/docs.png');
     width: 100%;
     height: 250px;
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
@@ -24,17 +22,43 @@ flex-direction: column;
 .map-container {
 width: 50%;
 }
-.map > h1 {
+.title-black {
+    font-weight: bold;
+    color: #050505;
+    font-size: 60px;
+    text-align: left;
+    padding-left: 30px;
+    margin-top: 15%;
+}
+.title-green {
     font-weight: bold;
     color: #23a161;
+    font-size: 60px;
+    text-align: left;
+    padding-left: 30px;
+
+}
+.text-map > h2 {
+    font-weight: bold;
+    color: black;
+    font-size: 30px;
+    text-align: left;
+    padding-left: 30px;
+    margin-top: 30px
+    
+}
+.text-map > p {
+    padding-left:30px ;
+    text-align: left;
+    margin-top: 30px
 }
 .map > p {
     font-weight: bold;
     font-size: 20px; 
 }
 .map-container path {
-    fill: rgb(250, 227, 164);
-    stroke: rgb(0, 0, 0);
+    fill: rgb(179, 179, 179);
+    stroke: rgb(255, 255, 255);
     stroke-width: 2px;
 }
 .map-container .green :hover {
@@ -43,9 +67,22 @@ fill: #23a161;
 .map-container .red :hover {
 fill: rgb(247, 94, 94);
 }
-.map-container > svg {
-    padding-left: 450px;
-}
+
 .map > h1 {
     padding-top: 20px;
+}
+.top-nav{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    color: honeydew;
+    padding: 20px;
+    justify-content: space-between; 
+}
+.top-nav > button {
+height: 30px;
+background-color: #ffffff00;
+color: aliceblue;
 }
