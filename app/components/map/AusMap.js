@@ -31,7 +31,8 @@ const AusMap = ({
     console.log(modalRef);
   };
   const closeModal =() =>{
-    setShowModal(false)
+    //setShowModal(false)
+    console.log()
   }
   return (
     <div>
@@ -47,13 +48,10 @@ const AusMap = ({
             Seeing your GP is about to get a lot harder depending on what state
             you live in.
           </p>
-          <h2>Click on the your state or territory below to find out more.</h2>
-          <svg width="100" height="100">
-            <path x="500" y="650" d="M 10 50 Q 50 90 90 50" stroke="black" fill="none" />
-            <path d="M 90 45 L 100 50 L 90 55 Z" fill="black" transform="rotate(-30, 90, 50)" />
-          </svg>
         </div>
         <div onMouseOver={closeModal} className="map-container">
+        <h2 className="top-banner-map">Click on the your state or territory below to find out more.</h2>
+
           <Modal
             modalRef={modalRef}
             states={states}
@@ -64,7 +62,7 @@ const AusMap = ({
             setShowModal={setShowModal}
             mousePosition={mousePosition}
           />
-          <svg
+          <svg className="svg-container"
             version="1.2"
             viewBox="0 0 1000 900"
             xmlns="http://www.w3.org/2000/svg"

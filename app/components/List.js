@@ -1,9 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/cjs/Button";
 import { urlEncode } from '../assets/helpers/utilities';
-const 
-
- List = ({
+const List = ({
+  setShowList,
   mps,
   dataUser,
   setEmailData,
@@ -19,6 +18,7 @@ const
       ...dataUser,
       ...mps,
     });
+    setShowList(true)
     setShowEmailForm(false);
     setShowFindForm(true);
   };

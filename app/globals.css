@@ -13,6 +13,9 @@ code {
 .background-general{
 background-color: white;
 }
+#emailInput-mainForm {
+  box-shadow: 0px 2px 0px 0px rgb(0, 0, 0);
+}
 .instructions > p {
   max-width: 1150px;
   font-size: 15px;
@@ -23,7 +26,6 @@ background-color: white;
   background-color: rgba(255, 255, 255, 0.171);
 }
 .contenedor{
-  max-width: 1140px;
   margin: 0 auto;
 }
 .main-image-container{
@@ -47,21 +49,21 @@ background-color: white;
   max-width: 1150px;
   border-radius: 10px ;
   margin:20px 0;
+  width: 60%;
 }
 .form-container{
-  background-color: #f0f7f4; /* Fondo del formulario */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: #ffffff; /* Fondo del formulario */
+  box-shadow: -1px 0px 0px 0px rgb(76, 175, 80);
   max-width: 1150px;
-  height: 100%;
-  border-radius: 10px ;
+  height: 500px;
 }
+
 .select-styles-form{
   margin:25px auto
 }
 .main-form-flex-container{
-  display: block;
-  justify-content: center;
-  padding:20px;
+  display: flex;
+  padding: 100px 80px 0 80px;
 }
 .find-her-mp-text{
   padding: 0px 0;
@@ -77,12 +79,12 @@ background-color: white;
 .field {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 60%;
+  justify-content: left;
+  width: 100%;
   margin-bottom: 20px;
 }
 #findButton-mainForm{
-  background-color: #4CAF50; /* Color de fondo */
+  background-color: rgb(76, 175, 80); /* Color de fondo */
   color: white; /* Color de texto */
   padding: 10px 20px; /* Espaciado interno */
   border: none; /* Sin borde */
@@ -95,8 +97,10 @@ background-color: white;
   background-color: #45a049; /* Cambio de color en hover */
 }
 .container-content{
-  text-align: center;
+  text-align: left;
   padding: 30px;
+  margin-right: 30%;
+  padding-left: 50px;
 }
 .text, .text2{
   text-align: center;
@@ -130,10 +134,11 @@ background-color: white;
 }
 .senators-container{
   text-align: justify;
-  background-color: #d1f2ff45; /* Color de fondo */
+  background-color: #ffffff; /* Color de fondo */
   padding: 20px; /* Espaciado interno */
   border-radius: 10px; /* Borde redondeado */
   box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  width: 75%;
 }
 .representatives-container{
   padding: 20px 0px; /* Espaciado interno */
@@ -183,6 +188,8 @@ display: flex;
   border-radius: 10px; /* Borde redondeado */
   box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
   background-color: #f0f7f4; /* Fondo del formulario */
+  margin-right: 10%;
+  width: 55%;
 }
 
 
@@ -248,7 +255,11 @@ display: flex;
     margin: 0 auto;
   }
   .main-form-flex-container{
-    padding: 20px;
+    padding: 5px;
+    flex-direction: column;
+  }
+  .form-container{
+    box-shadow: 0px -1px 0px 0px rgb(76, 175, 80);
   }
   .formEmail {
     display: block;
@@ -257,8 +268,13 @@ display: flex;
     min-width: auto;
     min-height: 250px;
   }
+  .senators-container{
+    width: 100%;
+    box-shadow: none /* Sombra suave */
+  }
   .emailContainer{
-    padding: 25px;
+    padding: 20px;
+    width: 100%;
   }
   .buttonsContainer {
     text-align: center;
@@ -287,6 +303,7 @@ display: flex;
   .instructions{
     padding: 35px 10px;
     max-width: 1150px;
+    width: 100%;
   }
   .instructions > p {
     max-width: 1150px;
@@ -297,24 +314,13 @@ display: flex;
     letter-spacing: 0px;
   }
   .container-content{
-    text-align: center;
+    text-align: left;
     padding: 10px 12px;
   }
   h3 > .typ-content{
     line-height: 1.7em !important;
   }
-  .map-container > svg {
-    padding-top: 72px;
-    padding-left: 1px;
-    width: 220%;
-}
-.header-img{
-  background-image: url('./assets/images/docsmob.png');
-  width: 100%;
-  height: 250px;
-  background-size:cover;   /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
-  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-}
+
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
   
@@ -359,14 +365,7 @@ display: flex;
   h3 > .typ-content {
     line-height: 1.7em !important;
        
-  }´
-
-  .map-container > svg {
-    padding-bottom: 208px;
-    padding-top: 100px;
-    padding-left: 10px;
-    width: 220%;
-}
+  }
 }
 @media (min-width: 1024px) {
   .map{
