@@ -50,9 +50,8 @@ const AusMap = ({
           </p>
         </div>
         <div onMouseOver={closeModal} className="map-container">
-        <h2 className="top-banner-map">Click on the your state or territory below to find out more.</h2>
-
-          <Modal
+        <h2 className="top-banner-map">Click on the your state or territory below to find out more.</h2>          
+        <Modal
             modalRef={modalRef}
             states={states}
             setHideMain={setHideMain}

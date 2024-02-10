@@ -5,7 +5,6 @@
   left: 0;
   width: 12%;
   height: 15%;
-  
   justify-content: center;
   align-items: center;
   opacity: 0; /* Inicialmente oculto */
@@ -29,16 +28,35 @@
 .modal-content-own > div {
 text-align: center;
 }
+.modal-overlay-tac {
+  display: flex;
+  position: fixed;
+  top: 350px;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Inicialmente oculto */
+  visibility: hidden; /* Inicialmente oculto */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave */
+}
 .modal-content-tac {
-  background-color: snow; /* Fondo degradado de azules y verdes */  
-  padding: 20px;
+  background-color: rgb(255, 255, 255); 
   border-radius: 8px;
-  text-align: center;
-  width: 30%;
+  width: 60%;
   opacity: 0; /* Inicialmente oculto */
   transition: opacity 1s ease; /* Transición suave */
-}
-/* Estilo para el botón de cerrar (puedes personalizarlo según tus necesidades) */
+  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  padding: 40px;
+  text-align: left;
+  font-size: 15px;
+  line-height: 45px;
+} 
+.modal-content-tac > div {
+  text-align: center;
+  }
+/* Estilo para el botón de cerrar */
 .modal-content-own button {
   background-color: #f44336;
   color: white;
@@ -48,15 +66,18 @@ text-align: center;
   cursor: pointer;
   align-self: center;
 }
+
 /* Estilo para el botón de cerrar tac (puedes personalizarlo según tus necesidades) */
 .modal-content-tac button {
   background-color: #f44336;
   color: white;
-  padding: 10px 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  align-self: center;
+  width:80px;
 }
+
 .modal-button-red{
   background-color: #fc6363; /* Color de fondo */
   color: white; /* Color de texto */
@@ -87,7 +108,7 @@ text-align: center;
   opacity: 1; /* Mostrar el modal */
   visibility: visible; /* Mostrar el modal */
 }
-.modal-overlay.active, .modal-content-tac.active {
+.modal-overlay-tac.active, .modal-content-tac.active {
   opacity: 1; /* Mostrar el modal */
   visibility: visible; /* Mostrar el modal */
 }
@@ -101,7 +122,12 @@ text-align: center;
     visibility: visible; /* Mostrar el modal */
     width: 80%;
   }
-
+.modal-content-tac {
+  width:90%;
+  padding:20px;
+  font-size: 10px;
+  line-height: 22px;
+} 
 }
 @media screen and (min-width: 768px) and (max-width:1023px){
   .modal-content-own {

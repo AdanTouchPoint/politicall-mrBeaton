@@ -109,22 +109,20 @@ const MainForm = ({
   };
   return (
     <div hidden={hideMain}>
+       <TAC setShowTAC={setShowTAC} showTAC={showTAC} />
       <div className={"contenedor main-form-flex-container"}>
         <div className={"container instructions"}>
-          <h1>mainData.title </h1>
-          <h2>mainData.subtitle</h2>
+          <h1>{mainData.title} </h1>
+          <h2>{mainData.subtitle}</h2>
           {mainData.instruction.split("\n").map((el, index) => (
             <p key={index}>
-              {" "}
-              {el} <br />{" "}
+              {el} <br />
             </p>
           ))}
         </div>
         <div hidden={showFindForm} className={"form-container"}>
-          <TAC setShowTAC={setShowTAC} showTAC={showTAC} />
           <div className={"container container-content"}>
             <h1>
-              {" "}
               Concerned about how Victoria’s state tax will impact your care?
               Have your say and contact your local MP today.
             </h1>
