@@ -48,6 +48,7 @@ const MainForm = ({
   const [showThankYou, setShowThankYou] = useState(true);
   const [tac, setTac] = useState(false);
   const [showTAC, setShowTAC] = useState(false);
+  const [hideInstructions,setHideInstructions]= useState(false)
   const { formFields } = mainData;
   const handleTerms = (e) => {
     e.preventDefault;
@@ -104,14 +105,14 @@ const MainForm = ({
       setShowLoadSpin,
       setShowList
     ).catch((error) => console.log("error", error));
-    setShowFindForm(true)
     scroll.scrollToBottom();
   };
   return (
     <div hidden={hideMain}>
        <TAC setShowTAC={setShowTAC} showTAC={showTAC} />
       <div className={"contenedor main-form-flex-container"}>
-        <div className={"container instructions"}>
+        <div className="instructions-findform-contain">
+        <div hidden={hideInstructions} className={"container instructions"}>
           <h1>{mainData.title} </h1>
           <h2>{mainData.subtitle}</h2>
           {mainData.instruction.split("\n").map((el, index) => (
@@ -194,7 +195,6 @@ const MainForm = ({
                   />
                 </Form.Group>
               </div>
-
               {showLoadSpin ? (
                 <Loader
                   visible={showLoadSpin}
@@ -206,7 +206,8 @@ const MainForm = ({
                 />
               ) : null}
             </Form>
-          </div>
+          </div> 
+        </div>
         </div>
         <div className={"container senators-container"} hidden={showList}>
           <div className="note-container">
@@ -225,6 +226,7 @@ const MainForm = ({
             {mp.length > 0 ? (
               mp.map((mps, index) => (
                 <List
+                  setHideInstructions={setHideInstructions}
                   setShowList={setShowList}
                   setShowEmailForm={setShowEmailForm}
                   setShowFindForm={setShowFindForm}
@@ -250,7 +252,8 @@ const MainForm = ({
             {senator?.length > 0 ? (
               senator?.map((mps, index) => (
                 <List
-                setShowList={setShowList}
+                  setHideInstructions={setHideInstructions}
+                  setShowList={setShowList}
                   setShowEmailForm={setShowEmailForm}
                   setShowFindForm={setShowFindForm}
                   showFindForm={showFindForm}
@@ -272,6 +275,7 @@ const MainForm = ({
           </div>
         </div>
         <EmailForm
+          setHideInstructions={setHideInstructions}
           setShowThankYou={setShowThankYou}
           setShowFindForm={setShowFindForm}
           setShowEmailForm={setShowEmailForm}

@@ -49,21 +49,27 @@ background-color: white;
   max-width: 1150px;
   border-radius: 10px ;
   margin:20px 0;
-  width: 60%;
+  width: 75%;
+  margin-bottom: 10%
 }
 .form-container{
-  background-color: #ffffff; /* Fondo del formulario */
   box-shadow: -1px 0px 0px 0px rgb(76, 175, 80);
   max-width: 1150px;
   height: 500px;
+  background-color: rgb(247, 246, 242);
 }
-
+.instructions-findform-contain{
+  display:flex;
+  flex-direction: row;
+}
 .select-styles-form{
   margin:25px auto
 }
 .main-form-flex-container{
   display: flex;
-  padding: 100px 80px 0 80px;
+  padding: 100px 80px 100px 80px;
+  background-color: rgb(247, 246, 242);
+  flex-direction: column;
 }
 .find-her-mp-text{
   padding: 0px 0;
@@ -134,11 +140,12 @@ background-color: white;
 }
 .senators-container{
   text-align: justify;
-  background-color: #ffffff; /* Color de fondo */
+  background-color: rgb(247, 246, 242); /* Color de fondo */
   padding: 20px; /* Espaciado interno */
   border-radius: 10px; /* Borde redondeado */
-  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
-  width: 75%;
+  /*box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  width: 40%;
+  margin: 10px;
 }
 .representatives-container{
   padding: 20px 0px; /* Espaciado interno */
@@ -158,11 +165,12 @@ background-color: white;
 .buttonsContainer{
   display:flex;
   padding:7px 7px;
-  background-color: #eafff6;
   justify-content: space-between;
   margin: 20px; /* Margen inferior */
   border-radius: 5px; /* Borde redondeado */
-  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  /*box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  flex-direction: column;
+  background-color: white;
 }
 .buttons-container-email-form{
   text-align: center;
@@ -174,10 +182,16 @@ background-color: white;
 }
 .buttons{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: left;
   row-gap: 10px;
   margin: 20px;
+}
+.buttons > div {
+  padding-right: 10px;
+}
+.buttons > div > svg {
+  margin-right: 10px;
 }
 .formEmail {
 display: flex;
@@ -186,16 +200,20 @@ display: flex;
 .emailContainer{
   padding:50px;
   border-radius: 10px; /* Borde redondeado */
-  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
-  background-color: #f0f7f4; /* Fondo del formulario */
-  margin-right: 10%;
-  width: 55%;
-}
+  background-color: rgb(247, 246, 242);/* Fondo del formulario */
+  width: 100%;
 
+}
+#username-emailform, #email-emailForm, #to-emailForm, #state-emailForm, #subject-emailform, #message-emailform {
+  box-shadow: 0px 2px 0px 0px rgb(0, 0, 0);
+  margin-bottom: 10px;
+}
 
 .list-content-location{
     padding-top: 10px;
     margin: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 .list-buttons-content{
   padding:5px;
@@ -203,7 +221,6 @@ display: flex;
 .list-button{
   max-width: 110px; /* Anchura máxima */
   width: 100%; /* Anchura completa */
-  padding: 10px 20px; /* Espaciado interno */
   background-color: #4CAF50; /* Color de fondo */
   color: white; /* Color de texto */
   border: none; /* Sin borde */
@@ -250,16 +267,19 @@ display: flex;
   text-transform: capitalize;
 }
 @media (max-width: 767px) {
+  .main-form-flex-container{
+    padding: 10px;
+  }
   .contenedor{
     max-width: 90%;
     margin: 0 auto;
   }
-  .main-form-flex-container{
-    padding: 5px;
+  .instructions-findform-contain{
     flex-direction: column;
   }
   .form-container{
     box-shadow: 0px -1px 0px 0px rgb(76, 175, 80);
+
   }
   .formEmail {
     display: block;
@@ -362,6 +382,19 @@ display: flex;
   h3 > .typ-content {
     line-height: 1.7em !important;
        
+  }
+  .instructions{
+    width: 100%;
+  }
+  .instructions-findform-contain{
+    flex-direction: column;
+  }
+  .form-container{
+    box-shadow: 0px -1px 0px 0px rgb(76, 175, 80);
+
+  }
+  .main-form-flex-container{
+    padding: 10px;
   }
 }
 @media (min-width: 1024px) {

@@ -29,7 +29,8 @@ const EmailForm = ({
   mainData,
   allDataIn,
   setAllDataIn,
-  configurations
+  configurations,
+  setHideInstructions
 }) => {
   const [validated, setValidated] = useState(false);
   const [error, setError] = useState(false);
@@ -120,6 +121,7 @@ const EmailForm = ({
   };
   const back = (e) => {
     e.preventDefault();
+    setHideInstructions(false)
     setShowFindForm(false);
     setShowEmailForm(true);
   };
@@ -137,6 +139,7 @@ console.log(showEmailForm)
             <Form.Group>
               <Form.Label>{mainData.emailFormUserNameLabel}</Form.Label>
               <Form.Control
+                plaintext="true"
                 id="username-emailform"
                 type="text"
                 placeholder={mainData.emailFormUserNamePlaceholder}
@@ -150,6 +153,8 @@ console.log(showEmailForm)
             <Form.Group controlId="email">
               <Form.Label>{mainData.emailFormUserLabel}</Form.Label>
               <Form.Control
+                plaintext="true"
+                id="email-emailForm"
                 type="email"
                 placeholder={emailData.emailUser}
                 onChange={handleChange}
@@ -166,10 +171,11 @@ console.log(showEmailForm)
           <Col>
             <Form.Group>
               <Form.Control
+                plaintext="true"
+                id="to-emailForm"
                 as={"input"}
                 readOnly
                 type="text"
-                s
                 placeholder={emailData.name}
                 name="nameTo"
               />
@@ -178,6 +184,8 @@ console.log(showEmailForm)
           <Col>
             <Form.Group>
               <Form.Control
+                plaintext="true"
+                id="state-emailForm"
                 as={"input"}
                 readOnly
                 type="text"
@@ -192,6 +200,7 @@ console.log(showEmailForm)
             <Form.Group>
               <Form.Label>{mainData.emailFormSubjectPlaceholder}</Form.Label>
               <Form.Control
+                plaintext="true"
                 id="subject-emailform"
                 onChange={handleChange}
                 as="input"
@@ -210,10 +219,10 @@ console.log(showEmailForm)
                 <Form.Group>
                   <Form.Label> {el.questions} </Form.Label>
                   <Form.Control
+                    plaintext="true"
                     id="message-emailform"
                     onChange={handleQuestions}
-                    as="textarea"
-                    type="text-area"
+                    type="text"
                     name={`question${index + 1}`}
                     required
                   />
