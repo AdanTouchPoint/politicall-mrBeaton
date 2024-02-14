@@ -37,7 +37,7 @@ const AusMap = ({
   return (
     <div>
       <div onMouseOver={closeModal} className="top-nav">
-        <p className="navbar-text">STOP SAWMPING GPs</p>
+        <p className="navbar-text">STOP SWAMPING GPs</p>
       </div>
       <div onClick={handleOutsideClick} hidden={showMap} className="map">
         <div className="text-map">
