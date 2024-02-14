@@ -88,7 +88,6 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
   border-radius: 10px;
   font-family: "Open Sans", sans-serif;
 }
@@ -155,14 +154,12 @@ margin-bottom: 30px;
 
 }
 .subtitle-black {
-  font-weight: bold;
   color: #050505;
   font-size: 75px;
   text-align: left;
   margin-bottom: 0px;
 }
 .subtitle-green {
-  font-weight: bold;
   color: #23a161;
   font-size: 75px;
   text-align: left;
@@ -190,7 +187,8 @@ label {
 }
 .text-form-header{
   font-family: 'Open Sans', sans-serif;
-  font-size: 45px;
+  font-size: 38px;
+  margin-top: 35px;
 }
 .form-group{
   max-width: 1050px;

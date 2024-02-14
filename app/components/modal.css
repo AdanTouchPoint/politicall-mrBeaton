@@ -128,7 +128,7 @@ text-align: center;
   .modal-overlay.active, .modal-content-own.active {
     opacity: 1; /* Mostrar el modal */
     visibility: visible; /* Mostrar el modal */
-    width: 80%;
+    width: 60%;
   }
 .modal-content-tac {
   width:90%;

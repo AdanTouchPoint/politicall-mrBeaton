@@ -125,7 +125,7 @@ const MainForm = ({
           <div className={"container container-content"}>
             <h1 className="text-form-header">
               Concerned about how {states === "sas" ? "SA" : states === "nsws" ? "NSW" : states === "vics"? "VIC" : "N/A"}’s state tax will
-              impact your care? Have your say and contact your local MP today.
+              impact your care? Have your say and <br/> <div style={{ fontWeight: "bold"}}> contact your local MP today. </div> 
             </h1>
             {error ? (
               <Alert variant={"danger"}>

@@ -158,7 +158,10 @@
   display: block ruby;
   font-family: '__Anton_b82fdb', '__Anton_Fallback_b82fdb';
   text-align: center;
-  width: 100%;
+  width: 87%;
+  }
+  .text-green-map{
+    margin: 0px 1px 0px 1px;
   }
 }
 
@@ -179,6 +182,10 @@ flex-direction: column;
   margin-top: 15px;
   font-size: 27px;
 }
+.top-banner-map{
+  font-size: 28px;
+  width: 90%;
+  }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
@@ -190,16 +197,26 @@ flex-direction: column;
     width: 85%;
    }
  .map-container > svg {
-    padding-top: 70px;
-    padding-left: 1px;
-    width: 150%;
+  padding-top: 70px;
+    padding-left: 25px;
+    width: 120%;
 
+}
+.subtitle-map{
+  font-size: 15px;
 }
 }
 @media (min-width: 1201px){
   .map-container > svg {
     padding-top: 70px;
     padding-left: 1px;
-    width: 100%;
+    width: 130%;
 }
+.top-banner-map{
+  font-size: 21px;
+  width: 92%;
+  }
+  .subtitle-map{
+    font-size: 22px;
+  }
 }
