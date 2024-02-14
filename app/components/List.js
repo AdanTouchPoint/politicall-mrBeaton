@@ -60,9 +60,9 @@ const List = ({
           ) : (
             <Button
               id="tweetList-button"
-              className="list-button"
+              className="list-button-disabled"
               size={"sm"}
-              variant={"danger"}
+              variant={"success"}
               disabled
             >
               <svg
@@ -107,9 +107,9 @@ const List = ({
           ) : (
             <Button
             id="emailList-button"
-            className="list-button"
+            className="list-button-disabled"
             size={"sm"}
-            variant={"danger"}
+            variant={"success"}
             disabled
           >
             <svg
@@ -155,10 +155,9 @@ const List = ({
           ) : (
             <Button
               id="callList-button"
-              className="list-button"
+              className="list-button-disabled"
               size={"sm"}
-              variant={"danger"}
-              
+              variant={"success"}
               disabled
             >
               <svg

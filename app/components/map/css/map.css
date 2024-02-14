@@ -58,6 +58,7 @@
   text-align: left;
   padding-left: 30px;
 }
+
 .text-map > h2 {
   font-weight: bold;
   color: black;
@@ -83,6 +84,12 @@
 }
 .orange-path {
   fill: #ff5b00;
+  stroke: #e6d4c1;
+  stroke-width: 0.5;
+  stroke-miterlimit: 10;
+}
+.red-path {
+  fill: #ff0000;
   stroke: #e6d4c1;
   stroke-width: 0.5;
   stroke-miterlimit: 10;
@@ -122,6 +129,7 @@
     transition: opacity 1s ease-in-out;
     flex-direction: column;
     padding: 10px;
+    height: 100vh;
   }
   .map-container {
     width: 100%;
@@ -141,10 +149,10 @@
   .subtitle-map{
     padding-left: 30px;
     margin-top: 15px;
-    font-size: 20px;
+    font-size: 14px;
   }
   .top-banner-map{
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 200;
   padding: 5px;
   display: block ruby;

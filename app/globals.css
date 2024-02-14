@@ -299,6 +299,17 @@ display: flex;
   font-size: 16px; /* Tamaño de fuente */
   transition: background-color 0.3s ease; /* Transición suave */;
 }
+.list-button-disabled {
+  max-width: 110px; /* Anchura máxima */
+  width: 100%; /* Anchura completa */
+  background-color: #E0F7EB; /* Color de fondo */
+  color: white; /* Color de texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Borde redondeado */
+  cursor: pointer; /* Cursor al pasar el ratón */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.3s ease; /* Transición suave */;
+}
 /* Estilo para el botón hover */
 .list-button:hover {
   background-color: #45a049; /* Cambio de color en hover */
@@ -384,6 +395,15 @@ h5 {
   .buttonsContainer {
     text-align: center;
     display: block;
+    padding: 10px;
+  }
+  .list-content-location > h3{
+    font-size: 15px;
+    line-height:25px;
+  }
+  .list-content-location > p{
+    font-size: 15px;
+    margin-bottom: 0.5rem;
   }
   .text{
     font-size: 23px;
@@ -428,8 +448,14 @@ h5 {
 
 }
 @media screen and (min-width: 769px) and (max-width: 1024px){
+  .senators-container{
+    width: 100%;
+  }
+  .buttons{
+    justify-content: left;
+  }
   .subtitle-content-mainform{
-    width: 30%;
+    width: 34%;
   }
   .modal-content-own {
     width: 50%;
@@ -492,4 +518,11 @@ h5 {
    .main-form-flex-container{
     padding: 20px;
    }
+   .buttons{
+    justify-content: left;
+  }
+  .senators-container{
+    width: 100%;
+  }
+  
 }
