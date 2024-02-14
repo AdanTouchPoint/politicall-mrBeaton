@@ -44,7 +44,7 @@ const AusMap = ({
           <h1 className="title-black">DOES YOUR STATE</h1>
           <h1 className="title-green"> CARE ABOUT YOUR CARE?</h1>
           <p className="subtitle-map">
-            SEEIGN YOUR GP IS ABOUT TO GET A LOT HARDER <br/>
+            SEEING YOUR GP IS ABOUT TO GET A LOT HARDER <br/>
             DEPENDING ON WHAT STATE YOU LIVE IN.
           </p>
         </div>
