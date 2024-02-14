@@ -2,6 +2,21 @@ import './globals.css'
 import { GTMnoscript } from './lib/GTMnoscript'
 import { GAscript } from './lib/GAscript'
 import { GTMscript } from './lib/GTMscript'
+import { Anton } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
+const open_sans = Open_Sans(
+  {
+      subsets:['latin'],
+      weight: '400',
+  }
+)
+const anton = Anton(
+  {
+      subsets:['latin'],
+      weight: '400',
+      variable:'--font-global'
+  }
+)
 export const metadata = {
   title:process.env.NEXT_PUBLIC_PAGE_TITLE ,
   description: process.env.NEXT_PUBLIC_PAGE_DESCRIPTION ,
@@ -16,7 +31,7 @@ export default function RootLayout({ children }) {
       <GTMscript/>
       <GAscript />
     </head>
-      <body>
+      <body className={`${anton.className} ${open_sans.className}`}>
         {children}
         <GTMnoscript />
       </body>

@@ -240,6 +240,18 @@ console.log(showEmailForm)
         />
       </Form>
       <div className={"container buttons-container-email-form"}>
+
+        <Button
+          id="backButton-emailform"
+          className={"button-email-form"}
+          variant={"dark"}
+          onClick={back}
+        >
+          {emailData.backButton
+            ? "please enter a back-button text on your dashboard"
+            : "Back"}
+        </Button>
+
         <Button
           id="sendButton-emailform"
           type={"submit"}
@@ -250,16 +262,6 @@ console.log(showEmailForm)
           {emailData.sendButton
             ? "please enter a send-button text on your dashboard"
             : "Send"}
-        </Button>
-        <Button
-          id="backButton-emailform"
-          className={"button-email-form"}
-          variant={"dark"}
-          onClick={back}
-        >
-          {emailData.backButton
-            ? "please enter a back-button text on your dashboard"
-            : "Back"}
         </Button>
       </div>
     </div>

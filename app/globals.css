@@ -6,12 +6,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+:root{
+  --font-global:'Anton', Anton;
+  font-family: var(--font-global);
+  
+}
+h2 {
+font-family: 'Open Sans', sans-serif;  
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
 .background-general{
-background-color: white;
+  background-color: rgb(247, 246, 242);
+  height: 100vh;
 }
 #emailInput-mainForm {
   box-shadow: 0px 2px 0px 0px rgb(0, 0, 0);
@@ -20,13 +29,13 @@ background-color: white;
   max-width: 1150px;
   font-size: 15px;
   margin-bottom: 0rem;
-  letter-spacing: 2px;
-  word-spacing: 10px;
   line-height: 30px;
   background-color: rgba(255, 255, 255, 0.171);
 }
 .contenedor{
   margin: 0 auto;
+  width: 100%;
+
 }
 .main-image-container{
   margin-top:0px ;
@@ -50,12 +59,11 @@ background-color: white;
   border-radius: 10px ;
   margin:20px 0;
   width: 75%;
-  margin-bottom: 10%
+  
 }
 .form-container{
-  box-shadow: -1px 0px 0px 0px rgb(76, 175, 80);
   max-width: 1150px;
-  height: 500px;
+  
   background-color: rgb(247, 246, 242);
 }
 .instructions-findform-contain{
@@ -63,7 +71,8 @@ background-color: white;
   flex-direction: row;
 }
 .select-styles-form{
-  margin:25px auto
+  margin:25px auto;
+  font-family: "Open Sans", sans-serif;
 }
 .main-form-flex-container{
   display: flex;
@@ -81,6 +90,7 @@ background-color: white;
   align-items: center;
   padding: 20px;
   border-radius: 10px;
+  font-family: "Open Sans", sans-serif;
 }
 .field {
   display: flex;
@@ -89,14 +99,26 @@ background-color: white;
   width: 100%;
   margin-bottom: 20px;
 }
+.subtitle-main{
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.buton-box-form {
+  width: 100%;
+}
 #findButton-mainForm{
-  background-color: rgb(76, 175, 80); /* Color de fondo */
+  background-color: #23a161; /* Color de fondo */
   color: white; /* Color de texto */
   padding: 10px 20px; /* Espaciado interno */
   border: none; /* Sin borde */
   border-radius: 5px; /* Borde redondeado */
   cursor: pointer; /* Cursor al pasar el ratón */
   font-size: 16px; /* Tamaño de fuente */
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  text-align: left;
 }
 /* Estilo para el botón hover */
 #findButton-mainForm:hover {
@@ -107,6 +129,8 @@ background-color: white;
   padding: 30px;
   margin-right: 30%;
   padding-left: 50px;
+  background-color: rgb(247, 246, 242);
+  box-shadow: -1px 0px 0px 0px #23a161
 }
 .text, .text2{
   text-align: center;
@@ -118,6 +142,37 @@ background-color: white;
 .text2{
   font-size: 35px;
 }
+.text-mainPage{
+  padding-left: 30px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.subtitle-content-mainform{
+font-size: 30px;
+box-shadow: 0px 2px 0px 0px #23a161;
+width: 30%;
+margin-bottom: 30px;
+
+}
+.subtitle-black {
+  font-weight: bold;
+  color: #050505;
+  font-size: 75px;
+  text-align: left;
+  margin-bottom: 0px;
+}
+.subtitle-green {
+  font-weight: bold;
+  color: #23a161;
+  font-size: 75px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+.p-content-main{
+  font-size: 13px !important;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
 .was-validated{
   display: flex;
   flex-direction: column;
@@ -128,6 +183,14 @@ background-color: white;
   color: #4a4a4a; /* Color de texto */
   font-weight: bold;
   margin-bottom: 5px;
+  font-family: "Open Sans", sans-serif;
+}
+label {
+  font-weight: bold;
+}
+.text-form-header{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 45px;
 }
 .form-group{
   max-width: 1050px;
@@ -135,8 +198,9 @@ background-color: white;
 .find-btn-main-form{
   margin: 10px 0px
 }
-.note-container{
+.note-container > p {
   padding: 20px 0px;
+  font-size: 25px;
 }
 .senators-container{
   text-align: justify;
@@ -146,12 +210,13 @@ background-color: white;
   /*box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
   width: 40%;
   margin: 10px;
+
 }
 .representatives-container{
   padding: 20px 0px; /* Espaciado interno */
- 
   border-radius: 10px; /* Borde redondeado */
   /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */ 
+  font-family: 'Open Sans', sans-serif;
 } 
 .input-subject{
   padding-top: 5px;
@@ -164,7 +229,7 @@ background-color: white;
 }
 .buttonsContainer{
   display:flex;
-  padding:7px 7px;
+  padding:1px 10px;
   justify-content: space-between;
   margin: 20px; /* Margen inferior */
   border-radius: 5px; /* Borde redondeado */
@@ -174,10 +239,11 @@ background-color: white;
 }
 .buttons-container-email-form{
   text-align: center;
+  width: 100%;
 }
 .button-email-form{
   margin: 20px;
-  background-color: #45a049;
+  background-color: #23a161;
   border-color: #fff0;
 }
 .buttons{
@@ -185,13 +251,16 @@ background-color: white;
   flex-direction: row;
   justify-content: left;
   row-gap: 10px;
-  margin: 20px;
+  margin-bottom: 10px;
 }
 .buttons > div {
   padding-right: 10px;
 }
 .buttons > div > svg {
   margin-right: 10px;
+}
+#tweet-icon, #email-icon, #phone-icon {
+  margin-right: 5px;
 }
 .formEmail {
 display: flex;
@@ -202,6 +271,7 @@ display: flex;
   border-radius: 10px; /* Borde redondeado */
   background-color: rgb(247, 246, 242);/* Fondo del formulario */
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
 
 }
 #username-emailform, #email-emailForm, #to-emailForm, #state-emailForm, #subject-emailform, #message-emailform {
@@ -211,7 +281,7 @@ display: flex;
 
 .list-content-location{
     padding-top: 10px;
-    margin: 20px;
+    margin: 0px;
     display: flex;
     justify-content: space-between;
 }
@@ -221,7 +291,7 @@ display: flex;
 .list-button{
   max-width: 110px; /* Anchura máxima */
   width: 100%; /* Anchura completa */
-  background-color: #4CAF50; /* Color de fondo */
+  background-color: #23a161; /* Color de fondo */
   color: white; /* Color de texto */
   border: none; /* Sin borde */
   border-radius: 5px; /* Borde redondeado */
@@ -243,8 +313,11 @@ display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px; /* Borde redondeado */
-  box-shadow: 1px -1px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
-  background-color: #f0f7f4; /* Fondo del formulario */
+  height: 100vh;
+
+}
+h5 {
+ font-family: 'Open Sans', sans-serif;
 }
 .typ-content{
   min-width: 1100px;
@@ -260,25 +333,31 @@ display: flex;
   padding: 25px;
 }
 .typ-content > button {
-  background-color: #4CAF50;
+  background-color: #23a161;
   border-color: #fff0;
 }
 .capitalize-style{
   text-transform: capitalize;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .text-form-header{
+    font-size: 25px;
+  }
+  .subtitle-content-mainform{
+    width: 70%;
+  }
   .main-form-flex-container{
     padding: 10px;
   }
   .contenedor{
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
   }
   .instructions-findform-contain{
     flex-direction: column;
   }
-  .form-container{
-    box-shadow: 0px -1px 0px 0px rgb(76, 175, 80);
+  .container-content{
+    box-shadow: 0px -1px 0px 0px #23a161;
 
   }
   .formEmail {
@@ -342,13 +421,15 @@ display: flex;
   }
 
 }
-@media screen and (min-width: 768px) and (max-width: 1023px){
-  
+@media screen and (min-width: 769px) and (max-width: 1024px){
+  .subtitle-content-mainform{
+    width: 30%;
+  }
   .modal-content-own {
     width: 50%;
   }
   .contenedor{
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
   }
   .formEmail {
@@ -389,23 +470,20 @@ display: flex;
   .instructions-findform-contain{
     flex-direction: column;
   }
-  .form-container{
-    box-shadow: 0px -1px 0px 0px rgb(76, 175, 80);
+  .container-content{
+    box-shadow: 0px -1px 0px 0px #23a161;
 
   }
   .main-form-flex-container{
     padding: 10px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .map{
 
     padding-top: 30px;
-   } 
- .map-container > svg {
-    padding-top: 50px;
-    padding-left: 1px;
-    width: 100%;
-
-}
+   }
+   .main-form-flex-container{
+    padding: 20px;
+   }
 }

@@ -113,19 +113,19 @@ const MainForm = ({
       <div className={"contenedor main-form-flex-container"}>
         <div className="instructions-findform-contain">
         <div hidden={hideInstructions} className={"container instructions"}>
-          <h1>{mainData.title} </h1>
-          <h2>{mainData.subtitle}</h2>
-          {mainData.instruction.split("\n").map((el, index) => (
-            <p key={index}>
-              {el} <br />
-            </p>
-          ))}
+          <h1 className="subtitle-black" >STATE PAYROLL TAX WILL</h1>
+          <h1 className="subtitle-green" >IMPACT YOUR HEALTH</h1>
+          <h2 className="subtitle-main" >{mainData.subtitle}</h2>
+          <h4 className="subtitle-content-mainform">{states === "sas" ? "SA" : states === "nsws" ? "NSW" : states === "vics"? "VIC" : "N/A"} DOESN’T CARE! </h4>
+            <p className="p-content-main"> Based on {states === "sas" ? "SA" : states === "nsws" ? "NSW" : states === "vics"? "VIC" : "N/A"}’s plans to enforce a State Tax on GP clinics over the next 2 years…</p>
+            <p className="p-content-main"> • Your chance to get a bulk-billed GP appointment will reduce by 35%.<br/>
+                • Your gap fee to see a private GP will increase by an average of $11.`</p>
         </div>
         <div hidden={showFindForm} className={"form-container"}>
           <div className={"container container-content"}>
-            <h1>
-              Concerned about how Victoria’s state tax will impact your care?
-              Have your say and contact your local MP today.
+            <h1 className="text-form-header">
+              Concerned about how {states === "sas" ? "SA" : states === "nsws" ? "NSW" : states === "vics"? "VIC" : "N/A"}’s state tax will
+              impact your care? Have your say and contact your local MP today.
             </h1>
             {error ? (
               <Alert variant={"danger"}>
@@ -168,7 +168,7 @@ const MainForm = ({
                     </Form.Group>
                   );
                 })}
-                <Form.Group>
+                <Form.Group className="buton-box-form">
                   <Button
                     id="findButton-mainForm"
                     type={"submit"}
@@ -179,7 +179,7 @@ const MainForm = ({
                       "u-full-width capitalize-style find-btn-main-form"
                     }
                   >
-                    {mainData.findBtnText}
+                    {'Get Started'}
                   </Button>
                 </Form.Group>
                 <Form.Group
@@ -298,6 +298,7 @@ const MainForm = ({
           configurations={configurations}
         />
         <ThankYou
+        setHideInstructions={setHideInstructions}
           emailData={emailData}
           setDataUser={setDataUser}
           setEmailData={setEmailData}

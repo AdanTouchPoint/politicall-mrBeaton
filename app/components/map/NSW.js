@@ -23,9 +23,7 @@ const NSW = ({mainData, setMainData, setStates, setShowModal, setModalText, setM
       instruction: `NSW doesn’t care!
       Based on NSW’s plans to enforce a State Tax on GP clinics over the next 2 years…
       • Your chance to get a bulk-billed GP appointment will reduce by 35%.
-      • Your gap fee to see a private GP will increase by an average of $11.
-      Concerned about how NSW’s state tax will impact your care? 
-      Have your say and contact your local MP today.`
+      • Your gap fee to see a private GP will increase by an average of $11.`
     })
   };
 

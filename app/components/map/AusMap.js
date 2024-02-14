@@ -37,19 +37,19 @@ const AusMap = ({
   return (
     <div>
       <div onMouseOver={closeModal} className="top-nav">
-        <p>Stop Swamping GPs</p>
+        <p className="navbar-text">STOP SAWMPING GPs</p>
       </div>
       <div onClick={handleOutsideClick} hidden={showMap} className="map">
         <div className="text-map">
-          <h1 className="title-black">Does your state</h1>
-          <h1 className="title-green"> care about your care?</h1>
-          <p>
-            Seeing your GP is about to get a lot harder depending on what state
-            you live in.
+          <h1 className="title-black">DOES YOUR STATE</h1>
+          <h1 className="title-green"> CARE ABOUT YOUR CARE?</h1>
+          <p className="subtitle-map">
+            SEEIGN YOUR GP IS ABOUT TO GET ALOT HARDER <br/>
+            DEPENDING ON WHAT STATE YOU LIVE IN.
           </p>
         </div>
         <div onMouseOver={closeModal} className="map-container">
-        <h2 className="top-banner-map">Click on the your state or territory below to find out more.</h2>          
+        <h2 className="top-banner-map">CLICK ON YOUR <div className="text-green-map"> STATE OR TERRITORY </div> BELOW TOFIND OUT MORE!</h2>          
         <Modal
             modalRef={modalRef}
             states={states}

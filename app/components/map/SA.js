@@ -22,8 +22,7 @@ const SA = ({mainData,setMainData,setStates, setShowModal, setModalText, setMous
       instruction: `SA doesn’t care!
       Based on SA’s plans to enforce a State Tax on GP clinics over the next 2 years…
       • Your chance to get a bulk-billed GP appointment will reduce by 35%.
-      • Your gap fee to see a private GP will increase by an average of $11.
-      Have your say and contact your local MP today.`
+      • Your gap fee to see a private GP will increase by an average of $11.`
     })
   };
 

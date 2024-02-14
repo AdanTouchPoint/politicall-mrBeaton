@@ -7,10 +7,12 @@ const ThankYou = ({
   setShowFindForm,
   setShowThankYou,
   typData,
+  setHideInstructions
 }) => {
   const click = (e) => {
     e.preventDefault();
     setShowThankYou(true);
+    setHideInstructions(false);
     setShowFindForm(false);
   };
   return (
