@@ -129,7 +129,6 @@
     transition: opacity 1s ease-in-out;
     flex-direction: column;
     padding: 10px;
-    height: 100vh;
   }
   .map-container {
     width: 100%;
@@ -164,7 +163,7 @@
     margin: 0px 1px 0px 1px;
   }
   .navbar-text {
-    margin-left: 10%;
+    margin-left: 6%;
     font-size: 26px;
   }
   .top-nav{
