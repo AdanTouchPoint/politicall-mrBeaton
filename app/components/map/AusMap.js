@@ -49,7 +49,7 @@ const AusMap = ({
           </p>
         </div>
         <div onMouseOver={closeModal} className="map-container">
-        <h2 className="top-banner-map">CLICK ON YOUR <div className="text-green-map"> STATE OR TERRITORY </div> BELOW TOFIND OUT MORE!</h2>          
+        <h2 className="top-banner-map">CLICK ON YOUR <div className="text-green-map"> STATE OR TERRITORY </div> BELOW TO FIND OUT MORE!</h2>          
         <Modal
             modalRef={modalRef}
             states={states}
