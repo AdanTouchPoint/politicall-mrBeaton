@@ -68,7 +68,7 @@
   margin-top: 30px;
 }
 .text-map > p {
-
+  padding-left: 30px;
   text-align: left;
   margin-top: 30px;
 }
@@ -121,6 +121,9 @@
 }
 
 @media (max-width: 768px) {
+  .text-map > p {
+    padding-left: 15px;
+  }
   .map {
     display: flex;
     place-content: center center;
@@ -207,7 +210,7 @@ flex-direction: column;
  .map-container > svg {
   padding-top: 70px;
     padding-left: 25px;
-    width: 120%;
+    width: 100%;
 
 }
 .subtitle-map{
@@ -218,7 +221,7 @@ flex-direction: column;
   .map-container > svg {
     padding-top: 70px;
     padding-left: 1px;
-    width: 130%;
+    width: 100%;
 }
 .top-banner-map{
   font-size: 20px;
@@ -226,5 +229,10 @@ flex-direction: column;
   }
   .subtitle-map{
     font-size: 20px;
+    margin-left: 30px;
+  }
+  .navbar-text {
+    margin-left: 3%;
+    font-size: 25px;
   }
 }
