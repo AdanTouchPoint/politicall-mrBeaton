@@ -8,7 +8,7 @@ const SA = ({mainData,setMainData,setStates, setShowModal, setModalText, setMous
     e.preventDefault();
     setStates(e.target.dataset.name)
     setShowModal(true)
-    setMousePosition({ x: e.clientX - 135, y: e.clientY - 200})
+    setMousePosition({ x: e.clientX - 135, y: e.clientY - 400})
     setModalText({
       title: 'Attention',
       message:`Based on SA's plans to enforce a State Tax on GP clinics over the next 2 years…

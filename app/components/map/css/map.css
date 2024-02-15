@@ -7,6 +7,7 @@
   padding: 15px;
   display: flex;
   font-family: '__Anton_b82fdb', '__Anton_Fallback_b82fdb';
+  width:auto;
 }
 .text-green-map{
   color: #23a161;
@@ -41,14 +42,14 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 .title-black {
   font-weight: bold;
   color: #050505;
   font-size: 65px;
   text-align: left;
-  padding-left: 30px;
+  padding-left: 0px;
   margin-top: 30%;
 }
 .title-green {
@@ -56,9 +57,8 @@
   color: #23a161;
   font-size: 65px;
   text-align: left;
-  padding-left: 30px;
+  padding-left: 0px;
 }
-
 .text-map > h2 {
   font-weight: bold;
   color: black;
@@ -68,7 +68,7 @@
   margin-top: 30px;
 }
 .text-map > p {
-  padding-left: 30px;
+  padding-left: 0px;
   text-align: left;
   margin-top: 30px;
 }
@@ -108,21 +108,32 @@
   background-color: black;
   color: honeydew;
   padding: 20px;
-  justify-content: space-between;
+  justify-content: center;
 }
 .navbar-text{
-  margin-left: 5%;
+  width: 100%;
+  padding-left: 10px;
   font-size: 25px;
+  
+  max-width: 1250px;
+  display: flex;
+  justify-content: flex-start;
 }
 .top-nav > button {
   height: 30px;
   background-color: #ffffff00;
   color: aliceblue;
 }
-
+.box-map{
+  
+ display: flex;
+ width:100%; 
+ justify-content: center;
+ max-width: 1250px;
+}
 @media (max-width: 768px) {
   .text-map > p {
-    padding-left: 15px;
+    padding-left: 0px;
   }
   .map {
     display: flex;
@@ -144,38 +155,37 @@
   .title-black {
   font-size: 50px;
   margin-top: 6%;
-  padding-left:15px;
+  padding-left:0px;
   }
   .title-green {
     font-size: 50px;
-    padding-left:15px;
+    padding-left:0px;
   }
   .subtitle-map{
-    padding-left: 15px;
+    padding-left: 0px;
     margin-top: 15px;
     font-size: 13px;
   }
   .top-banner-map{
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 200;
   padding: 5px;
   display: -webkit-inline-box;
   font-family: '__Anton_b82fdb', '__Anton_Fallback_b82fdb';
   text-align: center;
-  width: 94%;
+  width: 100%;
   }
   .text-green-map{
     margin: 0px 1px 0px 1px;
   }
   .navbar-text {
-    margin-left: 6%;
+    margin-left: 0%;
     font-size: 26px;
   }
   .top-nav{
     padding: 0px;
   }
 }
-
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 .map {
 flex-direction: column;
@@ -194,11 +204,10 @@ flex-direction: column;
   font-size: 26px;
 }
 .top-banner-map{
-  font-size: 27px;
+  font-size: 16px;
   width: 90%;
   }
 }
-
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
   .map{
 
@@ -208,7 +217,7 @@ flex-direction: column;
     width: 85%;
    }
  .map-container > svg {
-  padding-top: 70px;
+    padding-top: 70px;
     padding-left: 25px;
     width: 100%;
 
@@ -216,23 +225,28 @@ flex-direction: column;
 .subtitle-map{
   font-size: 15px;
 }
+.navbar-text {
+  margin-left: 0%;
+  font-size: 25px;
+}
 }
 @media (min-width: 1201px){
   .map-container > svg {
     padding-top: 70px;
     padding-left: 1px;
-    width: 100%;
+    width: 85%;
 }
 .top-banner-map{
   font-size: 20px;
-  width: 92%;
+  width: 85%;
+  margin-left: 30px;
   }
   .subtitle-map{
     font-size: 20px;
-    margin-left: 30px;
+    margin-left: 0px;
   }
   .navbar-text {
-    margin-left: 3%;
+    margin-left: 0%;
     font-size: 25px;
   }
 }

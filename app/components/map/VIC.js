@@ -8,7 +8,7 @@ const VIC = ({mainData,setMainData,setStates, setShowModal, setModalText, setMou
     e.preventDefault();
     setStates(e.target.dataset.name)
     setShowModal(true)
-    setMousePosition({ x: e.clientX - 235, y: e.clientY - 256})
+    setMousePosition({ x: e.clientX - 235, y: e.clientY - 450})
     setModalText({
       title: 'Attention',
       message:`Based on Victoria's plans to enforce a State Tax on GP clinics over the next 2 years…

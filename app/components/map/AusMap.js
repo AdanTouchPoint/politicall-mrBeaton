@@ -37,9 +37,10 @@ const AusMap = ({
   return (
     <div>
       <div onMouseOver={closeModal} className="top-nav">
-        <p className="navbar-text">DOES YOUR STATE CARE ABOUT YOUR CARE?</p>
+        <div className="navbar-text"><span>DOES YOUR STATE CARE ABOUT YOUR CARE?</span></div>
       </div>
       <div onClick={handleOutsideClick} hidden={showMap} className="map">
+       <div class="box-map">
         <div className="text-map">
           <h1 className="title-black">DOES YOUR STATE</h1>
           <h1 className="title-green"> CARE ABOUT YOUR CARE?</h1>
@@ -124,6 +125,9 @@ const AusMap = ({
             {/*RELEVANTE*/}
           </svg>
         </div>
+
+       </div>
+       
       </div>
     </div>
   );
