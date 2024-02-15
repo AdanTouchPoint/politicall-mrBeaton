@@ -68,7 +68,7 @@
   margin-top: 30px;
 }
 .text-map > p {
-  padding-left: 30px;
+
   text-align: left;
   margin-top: 30px;
 }
@@ -141,14 +141,16 @@
   .title-black {
   font-size: 50px;
   margin-top: 6%;
+  padding-left:15px;
   }
   .title-green {
     font-size: 50px;
+    padding-left:15px;
   }
   .subtitle-map{
-    padding-left: 30px;
+    padding-left: 15px;
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 13px;
   }
   .top-banner-map{
   font-size: 14px;
@@ -157,7 +159,7 @@
   display: -webkit-inline-box;
   font-family: '__Anton_b82fdb', '__Anton_Fallback_b82fdb';
   text-align: center;
-  width: 87%;
+  width: 94%;
   }
   .text-green-map{
     margin: 0px 1px 0px 1px;
