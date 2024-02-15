@@ -155,7 +155,7 @@
   font-size: 15px;
   font-weight: 200;
   padding: 5px;
-  display: block ruby;
+  display: -webkit-inline-box;
   font-family: '__Anton_b82fdb', '__Anton_Fallback_b82fdb';
   text-align: center;
   width: 87%;
