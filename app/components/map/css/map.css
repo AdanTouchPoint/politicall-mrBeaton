@@ -135,7 +135,7 @@
     width: 100%;
   }
   .svg-container{
-    width:115%;
+    width:100%;
     padding-top: 20px;
     margin-left: 0px;
   }
@@ -163,6 +163,13 @@
   .text-green-map{
     margin: 0px 1px 0px 1px;
   }
+  .navbar-text {
+    margin-left: 13%;
+    font-size: 26px;
+  }
+  .top-nav{
+    padding: 0px;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -180,10 +187,10 @@ flex-direction: column;
 .subtitle-map{
   padding-left: 30px;
   margin-top: 15px;
-  font-size: 27px;
+  font-size: 26px;
 }
 .top-banner-map{
-  font-size: 28px;
+  font-size: 27px;
   width: 90%;
   }
 }
@@ -213,7 +220,7 @@ flex-direction: column;
     width: 130%;
 }
 .top-banner-map{
-  font-size: 21px;
+  font-size: 20px;
   width: 92%;
   }
   .subtitle-map{
