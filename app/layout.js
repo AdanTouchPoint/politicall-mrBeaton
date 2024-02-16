@@ -14,7 +14,7 @@ const anton = Anton(
   {
       subsets:['latin'],
       weight: '400',
-      variable:'--font-global'
+      
   }
 )
 export const metadata = {

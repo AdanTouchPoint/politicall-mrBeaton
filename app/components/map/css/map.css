@@ -1,12 +1,12 @@
 .top-banner-map {
-  background-color: #050505;
-  color: white;
-  border-radius: 10px;
-  font-size: 20px;
+  --font-global:'anton', Anton, '__Anton_b82fdb', '__Anton_Fallback_b82fdb';
+  color: #000;
+ 
+   font-size: 25px;
   font-weight: 400;
-  padding: 15px;
+  padding: 0px;
   display: flex;
-  font-family: '__Anton_b82fdb', '__Anton_Fallback_b82fdb';
+  font-family: var(--font-global);
   width:auto;
 }
 .text-green-map{
@@ -131,7 +131,7 @@
  justify-content: center;
  max-width: 1250px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .text-map > p {
     padding-left: 0px;
   }
@@ -186,9 +186,10 @@
     padding: 0px;
   }
 }
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 .map {
 flex-direction: column;
+padding: 30px;
 }
 .title-black {
   margin-top: 5px;
@@ -204,7 +205,7 @@ flex-direction: column;
   font-size: 26px;
 }
 .top-banner-map{
-  font-size: 16px;
+  font-size: 28px;
   width: 90%;
   }
 }
@@ -237,7 +238,7 @@ flex-direction: column;
     width: 85%;
 }
 .top-banner-map{
-  font-size: 20px;
+  font-size: 22px;
   width: 85%;
   margin-left: 30px;
   }
