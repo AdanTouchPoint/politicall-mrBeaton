@@ -235,7 +235,7 @@ padding: 30px;
   .map-container > svg {
     padding-top: 70px;
     padding-left: 1px;
-    width: 85%;
+    width: 100%;
 }
 .top-banner-map{
   font-size: 22px;
