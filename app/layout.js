@@ -7,7 +7,7 @@ import { Open_Sans } from 'next/font/google';
 const open_sans = Open_Sans(
   {
       subsets:['latin'],
-      weight: '400',
+      weight: ['400', '700']
   }
 )
 const anton = Anton(

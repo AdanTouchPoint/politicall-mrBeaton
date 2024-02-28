@@ -10,7 +10,7 @@
   opacity: 0; /* Inicialmente oculto */
   visibility: hidden; /* Inicialmente oculto */
   transition: opacity 0.3s ease, visibility 0.3s ease; /* Transición suave */
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .modal-content-own {
@@ -23,6 +23,7 @@
   transition: opacity 0.3s ease; /* Transición suave */
   font-size: 12px;
   font-family:"Open Sans", sans-serif;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 .modal-content-own > h2{
   text-align: center;
