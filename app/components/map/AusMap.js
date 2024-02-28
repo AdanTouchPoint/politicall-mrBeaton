@@ -10,6 +10,7 @@ import NSW from "./NSW";
 import NT from "./NT";
 import ACT from "./ACT";
 import Modal from "../Modal";
+import Arrow from "./Arrow";
 
 const AusMap = ({
   mainData,
@@ -42,15 +43,17 @@ const AusMap = ({
       <div onClick={handleOutsideClick} hidden={showMap} className="map">
        <div class="box-map">
         <div className="text-map">
-          <h1 className="title-black">DOES YOUR STATE</h1>
-          <h1 className="title-green"> CARE ABOUT YOUR CARE?</h1>
           <p className="subtitle-map">
             SEEING YOUR GP IS ABOUT TO GET A LOT HARDER <br/>
             DEPENDING ON WHAT STATE YOU LIVE IN.
           </p>
         </div>
         <div onMouseOver={closeModal} className="map-container">
-        <h2 className="top-banner-map">CLICK ON YOUR <div className="text-green-map"> STATE OR TERRITORY </div> BELOW TO FIND OUT MORE!</h2>          
+        <div className="top-banner-map-container">
+          <h2 className="top-banner-map">CLICK ON YOUR <div className="text-green-map"> STATE OR TERRITORY </div>BELOW TO FIND OUT MORE! </h2>          
+          <Arrow/>
+        </div>
+      
         <Modal
             modalRef={modalRef}
             states={states}
