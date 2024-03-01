@@ -51,7 +51,7 @@ function Home() {
     const [tweet, setTweet] = useState('')
     const [dataQuestions,setDataQuestions] = useState()
     const [questions, setQuestions] = useState({
-      question1: '',
+      question1: 'Predefined Email \n Predefined Email2 \n Predefined Email3 \n Predefined Email4 \n Predefined Email5 \n Predefined Email6 \n Predefined Email7 \n Predefined Email8'.replace(/\n\r?/g, "<br/>"),
     })
     const [user,setUser] = useState('')
     const [mainData, setMainData] = useState({
