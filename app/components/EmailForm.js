@@ -8,7 +8,7 @@ import Alert from "react-bootstrap/Alert";
 import Loader from "react-loader-spinner";
 import { fetchData } from "../assets/petitions/fetchData";
 import { fetchLeads } from "../assets/petitions/fetchLeads";
-import { urlEncode } from '../assets/helpers/utilities';
+import { urlEncode } from "../assets/helpers/utilities";
 const EmailForm = ({
   setDataQuestions,
   dataQuestions,
@@ -30,11 +30,42 @@ const EmailForm = ({
   allDataIn,
   setAllDataIn,
   configurations,
-  setHideInstructions
+  setHideInstructions,
 }) => {
   const [validated, setValidated] = useState(false);
   const [error, setError] = useState(false);
   const [showLoadSpin, setShowLoadSpin] = useState(false);
+  const [hideLastQuestion, setHideLastQuestion] = useState(true);
+  const [hideAllQuestions, setHideAllQuestions] = useState(false);
+  const predefinedEmail = "Predefined Email \n Predefined Email2 \n Predefined Email3 \n Predefined Email4 \n Predefined Email5 \n Predefined Email6 \n Predefined Email7 \n Predefined Email8";
+  const handleTickBox = (e) => {
+    hideLastQuestion === true
+      ? setHideLastQuestion(false)
+      : setHideLastQuestion(true);
+  };
+  const handleDefaultEmail = (e) => {
+    e.preventDefault();
+    hideAllQuestions === true
+      ? setHideAllQuestions(false)
+      : setHideAllQuestions(true);
+  };
+  const mapingQuestions = (dataQuestions) => {
+    return dataQuestions.map((el, index) => (
+      <Col className="questions" key={index}>
+        <Form.Group>
+          <Form.Label> {el.questions} </Form.Label>
+          <Form.Control
+            plaintext="true"
+            id="message-emailform"
+            onChange={handleQuestions}
+            type="text"
+            name={`question${index + 1}`}
+            required
+          />
+        </Form.Group>
+      </Col>
+    ));
+  };
   const handleQuestions = (e) => {
     e.preventDefault();
     setQuestions({
@@ -49,14 +80,12 @@ const EmailForm = ({
     setDataUser({
       ...dataUser,
       ...emailData,
-      [e.target.name]: e.target.value
-        .replace(/\n\r?/g, "<br/>")
+      [e.target.name]: e.target.value.replace(/\n\r?/g, "<br/>"),
     });
     setEmailData({
       ...dataUser,
       ...emailData,
-      [e.target.name]: e.target.value
-        .replace(/\n\r?/g, "<br/>")
+      [e.target.name]: e.target.value.replace(/\n\r?/g, "<br/>"),
     });
   };
   const { userName, subject } = dataUser;
@@ -78,7 +107,9 @@ const EmailForm = ({
       backendURLBaseServices,
       endpoints.toSendEmails,
       clientId,
-      `questions=${urlEncode(JSON.stringify(questions))}&user=${urlEncode(JSON.stringify(dataUser))}`
+      `questions=${urlEncode(JSON.stringify(questions))}&user=${urlEncode(
+        JSON.stringify(dataUser)
+      )}`
     );
     setShowLoadSpin(false);
     if (payload.success === true) {
@@ -121,11 +152,11 @@ const EmailForm = ({
   };
   const back = (e) => {
     e.preventDefault();
-    setHideInstructions(false)
+    setHideInstructions(false);
     setShowFindForm(false);
     setShowEmailForm(true);
   };
-console.log(showEmailForm)
+  console.log(showEmailForm);
   return (
     <div className={"emailContainer"} hidden={showEmailForm}>
       {error ? (
@@ -133,6 +164,7 @@ console.log(showEmailForm)
           All fields are required, please fill in the missing ones.
         </Alert>
       ) : null}
+      <p style={{fontWeight:"bold"}} className={"form-label"}> Dont have time to answer all these questions? <Button variant="outline-success" onClick={handleDefaultEmail} > Click here to send your MP a pre-written email. </Button>  </p>
       <Form name="fm-email" onSubmit={send} noValidate validated={validated}>
         <div className={"formEmail"}>
           <Col>
@@ -195,7 +227,7 @@ console.log(showEmailForm)
             </Form.Group>
           </Col>
         </div>
-        <div className="input-subject">
+        <div className="formEmail">
           <Col>
             <Form.Group>
               <Form.Label>{mainData.emailFormSubjectPlaceholder}</Form.Label>
@@ -212,24 +244,26 @@ console.log(showEmailForm)
             </Form.Group>
           </Col>
         </div>
-        {dataQuestions
-          ? dataQuestions.map((el, index) => (
-              // eslint-disable-next-line react/jsx-key
-              <Col className="questions" key={index}>
-                <Form.Group>
-                  <Form.Label> {el.questions} </Form.Label>
-                  <Form.Control
-                    plaintext="true"
-                    id="message-emailform"
-                    onChange={handleQuestions}
-                    type="text"
-                    name={`question${index + 1}`}
-                    required
-                  />
-                </Form.Group>
-              </Col>
-            ))
-          : null}
+        {hideAllQuestions === false ? (
+          mapingQuestions(dataQuestions)
+        ) : (
+          <Col className="questions">
+            <Form.Group>
+              <Form.Label>TEST INput</Form.Label>
+              <Form.Control
+                plaintext="true"
+                id="message-emailform"
+                onChange={handleQuestions}
+                type="text-area"
+                as="textarea"
+                name={"question1"}
+                defaultValue={predefinedEmail}
+                rows={"10"}
+                required
+              />
+            </Form.Group>
+          </Col>
+        )}
         <Loader
           visible={showLoadSpin}
           type="Puff"
@@ -238,9 +272,41 @@ console.log(showEmailForm)
           width={100}
           timeout={5000}
         />
+        <Form.Group
+          style={{ textAlign: "justify" }}
+          className="field select-styles-form"
+          controlId="tickBox"
+        >
+          <Form.Check
+            name="tickBox"
+            onClick={handleTickBox}
+            required
+            label={
+              <p>
+                Would an increase in GP pricing due to this issue make you
+                consider your voting preference at the next election?
+              </p>
+            }
+          />
+        </Form.Group>
+        <div hidden={hideLastQuestion} className="questions">
+          <Col className="questions">
+            <Form.Group>
+              <Form.Label>
+                Tell your MP this sort of increase would make you consider
+                voting against them or their Party in the next election.
+              </Form.Label>
+              <Form.Control
+                plaintext="true"
+                id="message-emailform"
+                onChange={handleQuestions}
+                name="question1"
+              />
+            </Form.Group>
+          </Col>
+        </div>
       </Form>
       <div className={"container buttons-container-email-form"}>
-
         <Button
           id="backButton-emailform"
           className={"button-email-form"}
