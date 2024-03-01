@@ -164,11 +164,7 @@ const EmailForm = ({
           All fields are required, please fill in the missing ones.
         </Alert>
       ) : null}
-
-      <div className="prewritten-email-btn-container">
-        <p style={{fontWeight:"bold"}} className={"form-label"}> Dont have time to answer all these questions? </p> <Button className="prewritten-email-btn" variant="success" onClick={handleDefaultEmail} > Click here to send your MP a pre-written email. </Button>  
-
-      </div>
+      <p style={{fontWeight:"bold"}} className={"form-label"}> Dont have time to answer all these questions? <Button variant="outline-success" onClick={handleDefaultEmail} > Click here to send your MP a pre-written email. </Button>  </p>
       <Form name="fm-email" onSubmit={send} noValidate validated={validated}>
         <div className={"formEmail"}>
           <Col>
