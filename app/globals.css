@@ -6,6 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html, body{
+  width: 100%;
+  height: 100%;
+}
 :root{
   --font-global:'Anton', Anton;
   font-family: var(--font-global);
@@ -85,6 +89,7 @@ code {
   background-color: rgb(247, 246, 242);
   flex-direction: column;
   align-items: center;
+  width: 100%;
   max-width: 1250px;
 }
 .find-her-mp-text{
@@ -205,6 +210,15 @@ label {
   font-size: 26px;
   font-weight: 400;
 }
+.prewritten-email-btn-container{
+display: flex;
+width: 100%;
+justify-content: space-between;
+margin-bottom: 50px;
+}
+.prewritten-email-btn{
+  font-size: 18px;
+}
 .form-group{
   max-width: 1050px;
 }
@@ -280,7 +294,7 @@ display: flex;
  column-gap: 20px;
 }
 .emailContainer{
-  padding:50px;
+  padding:50px 0px;
   border-radius: 10px; /* Borde redondeado */
   background-color: rgb(247, 246, 242);/* Fondo del formulario */
   width: 100%;
@@ -372,11 +386,14 @@ h5 {
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: #F7F6F2;
+  
 }
 .mps-image{
-  margin-right: -5px;
+  
   width: 500px;
   height: auto;
+  
 }
 text[data-name="Australian Capital Territory"] {
   
