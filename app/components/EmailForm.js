@@ -37,7 +37,7 @@ const EmailForm = ({
   const [showLoadSpin, setShowLoadSpin] = useState(false);
   const [hideLastQuestion, setHideLastQuestion] = useState(true);
   const [hideAllQuestions, setHideAllQuestions] = useState(false);
-  const predefinedEmail = "Predefined Email \n Predefined Email2 \n Predefined Email3 \n Predefined Email4 \n Predefined Email5 \n Predefined Email6 \n Predefined Email7 \n Predefined Email8";
+  const predefinedEmail = "Hello,\nI am writing to express my concern over payroll taxes on GPs, which threaten their operation and our healthcare quality. These taxes add financial strain, potentially leading to longer wait times and reduced access for the public.\nPlease consider the negative impact of these taxes on healthcare availability and support opposing them. Your action can help maintain a robust healthcare system for our community.";
   const handleTickBox = (e) => {
     hideLastQuestion === true
       ? setHideLastQuestion(false)
@@ -164,7 +164,9 @@ const EmailForm = ({
           All fields are required, please fill in the missing ones.
         </Alert>
       ) : null}
-      <p style={{fontWeight:"bold"}} className={"form-label"}> Dont have time to answer all these questions? <Button variant="outline-success" onClick={handleDefaultEmail} > Click here to send your MP a pre-written email. </Button>  </p>
+      <div className="prewritten-email-btn-container">
+        <p style={{fontWeight:"bold"}} className={"form-label"}> Dont have time to answer all these questions? </p> <Button className="prewritten-email-btn" variant="success" onClick={handleDefaultEmail} > Click here to send your MP a pre-written email. </Button>  
+      </div>
       <Form name="fm-email" onSubmit={send} noValidate validated={validated}>
         <div className={"formEmail"}>
           <Col>
@@ -249,7 +251,7 @@ const EmailForm = ({
         ) : (
           <Col className="questions">
             <Form.Group>
-              <Form.Label>TEST INput</Form.Label>
+              <Form.Label>Message</Form.Label>
               <Form.Control
                 plaintext="true"
                 id="message-emailform"
@@ -258,7 +260,7 @@ const EmailForm = ({
                 as="textarea"
                 name={"question1"}
                 defaultValue={predefinedEmail}
-                rows={"10"}
+                rows={"5"}
                 required
               />
             </Form.Group>

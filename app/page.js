@@ -51,7 +51,7 @@ function Home() {
     const [tweet, setTweet] = useState('')
     const [dataQuestions,setDataQuestions] = useState()
     const [questions, setQuestions] = useState({
-      question1: 'Predefined Email \n Predefined Email2 \n Predefined Email3 \n Predefined Email4 \n Predefined Email5 \n Predefined Email6 \n Predefined Email7 \n Predefined Email8'.replace(/\n\r?/g, "<br/>"),
+      question1: 'Hello, \n I am writing to express my concern over payroll taxes on GPs, which threaten their operation and our healthcare quality. These taxes add financial strain, potentially leading to longer wait times and reduced access for the public.\n Please consider the negative impact of these taxes on healthcare availability and support opposing them. Your action can help maintain a robust healthcare system for our community.'.replace(/\n\r?/g, "<br/>"),
     })
     const [user,setUser] = useState('')
     const [mainData, setMainData] = useState({
