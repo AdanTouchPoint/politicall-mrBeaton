@@ -38,9 +38,9 @@ const List = ({
           {mps.twitter && mps.clientId?.plan !== "basic" ? (
             <Button
               id="tweetList-button"
+              
               className="list-button"
               size={"sm"}
-              variant={"dark"}
               href={`https://twitter.com/intent/tweet?text=${tweetText}`}
               target={"blank"}
             >
@@ -62,7 +62,7 @@ const List = ({
               id="tweetList-button"
               className="list-button-disabled"
               size={"sm"}
-              variant={"success"}
+              // variant={"success"}
               disabled
             >
               <svg
@@ -86,7 +86,7 @@ const List = ({
               id="emailList-button"
               className="list-button"
               size={"sm"}
-              variant={"dark"}
+              // variant={"dark"}
               target={"blank"}
               onClick={click}
             >

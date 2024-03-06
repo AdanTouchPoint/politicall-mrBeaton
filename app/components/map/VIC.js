@@ -11,11 +11,7 @@ const VIC = ({mainData,setMainData,setStates, setShowModal, setModalText, setMou
     setMousePosition({ x: e.clientX - 235, y: e.clientY - 450})
     setModalText({
       title: 'Attention',
-      message:`Based on Victoria's plans to enforce a State Tax on GP clinics over the next 2 years…
-        • Your chance to get a bulk-billed GP appointment will reduce by 35%
-        • Your gap fee to see a private GP will increase by an average of $11
-      Concerned about how Victoria’s state tax will impact your care?
-      Then let your local MP know about it.`,
+      message:e.target.dataset.name,
       button: 'Take Action!'
     })
     setMainData({
@@ -25,6 +21,7 @@ const VIC = ({mainData,setMainData,setStates, setShowModal, setModalText, setMou
       • Your chance to get a bulk-billed GP appointment will reduce by 35%.
       • Your gap fee to see a private GP will increase by an average of $11.`
     })
+    console.log('name-region',e.target.dataset.name)
   };
 
 return (

@@ -1,12 +1,12 @@
 .top-banner-map {
-  --font-global:'anton', Anton, '__Anton_b82fdb', '__Anton_Fallback_b82fdb';
+ 
   color: #000;
  
    font-size: 25px;
   font-weight: 400;
   padding: 0px;
   display: flex;
-  font-family: var(--font-global);
+  font-family: var(--font-anton);
   width:auto;
 }
 .text-green-map{
@@ -16,7 +16,7 @@
 .subtitle-map {
   font-size: 32px;
   font-weight: 700;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-open-sans);
   text-align: center;
   margin: 30px 0px 70px 0px ;
 }
@@ -109,10 +109,10 @@
 }
 .navbar-text{
   width: 100%;
-  padding-left: 10px;
+  padding-left: 0px;
   font-size: 25px;
   
-  max-width: 1250px;
+  max-width: 90%;
   display: flex;
   justify-content: flex-start;
 }
@@ -126,7 +126,7 @@
  display: flex;
  width:100%; 
  justify-content: center;
- max-width: 1250px;
+ max-width: 80%;
  flex-direction: column;
  align-items: center;
 }
@@ -147,13 +147,16 @@
 }
 .map-container > svg {
   padding-top: 30px;
-  padding-left: 1px;
+  margin-left: 50px;
   width: 100%;
 }
 svg > text{
   font-family: "Open Sans", sans-serif;
 }
 @media (max-width: 767px) {
+  .box-map{
+    max-width: 100%;
+  }
   .text-map > p {
     padding-left: 0px;
   }
@@ -171,11 +174,13 @@ svg > text{
   }
   .map-container > svg{
     padding-top: 20px;
+    margin-left: 0px;
   }
   .svg-container{
     width:100%;
     padding-top: 20px;
     margin-left: 0px;
+    margin: 0 auto;
   }
   .title-black {
   font-size: 50px;
@@ -197,7 +202,7 @@ svg > text{
   font-weight: 200;
   padding: 5px;
   display: -webkit-inline-box;
-  font-family: '__Anton_b82fdb', '__Anton_Fallback_b82fdb';
+  font-family: var(--font-anton);
   text-align: center;
   width:auto;
   }
@@ -206,10 +211,13 @@ svg > text{
   }
   .navbar-text {
     margin-left: 0%;
-    font-size: 26px;
+    font-size: 20px;
   }
   .top-nav{
+    height: auto;
     padding: 0px;
+    min-height: 60px;
+    align-items: center;
   }
   .arrow-top-banner-map{
     width: 100px;
@@ -217,6 +225,7 @@ svg > text{
     top:0px;
     right: 0px;
     transform: translateY(23%);
+    display: none;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -240,6 +249,9 @@ padding: 30px;
 .top-banner-map{
   font-size: 24px;
   width: 100%;
+  }
+  .box-map{
+    max-width: 100%;
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1200px) {

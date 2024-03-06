@@ -9,9 +9,7 @@ const TAS = ({setShowModal, setStates, setModalText,setMousePosition}) => {
     setStates(e.target.dataset.name)
     setModalText({
       title: 'Attention',
-      message:`Based on ${e.target.dataset.name}'s decision to not impose a state tax on health services in the next 2 years:
-      •Your chance to get a bulk billed GP is unchanged
-      •Your gap fee to see a private GP is unchanged`,
+      message:`${e.target.dataset.name}`,
       button: 'Close'
     })
     setMousePosition({ x: e.clientX - 235, y: e.clientY - 256})
