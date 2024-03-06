@@ -15,6 +15,7 @@ import TAC from "./TAC";
 import vicsImage from "../assets/images/VICS-premier.png"
 import nswImage from "../assets/images/NSW-premier.png"
 import saImage from "../assets/images/SA-premier.png"
+import ArrowBlack from "./ArrowBlack";
 const MainForm = ({
   dataUser,
   setDataUser,
@@ -135,7 +136,7 @@ const MainForm = ({
        <TAC setShowTAC={setShowTAC} showTAC={showTAC} />
       <div className={"main-form-flex-container"}>
         <div className="instructions-findform-contain">
-        <div hidden={hideInstructions} className={"container instructions"}>
+        <div hidden={hideInstructions} className={"instructions"}>
           <div className="img-mps-container">
             {
               premierImageControler(states)
@@ -144,32 +145,17 @@ const MainForm = ({
           </div>
           {/* <h2 className="subtitle-main" >{mainData.subtitle}</h2> */}
           <h4 className="subtitle-content-mainform">{states === "sas" ? "SOUTH AUSTRALIA" : states === "nsws" ? "NEW SOUTH WALES" : states === "vics"? "VICTORIA" : "N/A"} DOESN’T CARE! </h4>
-            <p className="p-content-main"> Based on {states === "sas" ? "SA" : states === "nsws" ? "NSW" : states === "vics"? "VIC" : "N/A"}’s plans to enforce a State Tax on GP clinics over the next 2 years…</p>
-            <p className="p-content-main"> <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_163_239)">
-<path d="M19.068 10.61L3.07127 0.14003C2.75248 -0.115669 2.6072 -0.0115948 2.7469 0.372414L9.32841 10.3776C9.46803 10.7616 9.46676 11.3839 9.32549 11.7674L2.7499 21.6267C2.60862 22.0101 2.75378 22.1154 3.07423 21.8618L19.0651 11.5323C19.3854 11.2787 19.3868 10.8658 19.068 10.61Z" fill="black"/>
-</g>
-<defs>
-<clipPath id="clip0_163_239">
-<rect width="22" height="22" fill="white" transform="matrix(-1 0 0 -1 22 22)"/>
-</clipPath>
-</defs>
-</svg> Your chance to get a bulk-billed GP appointment will reduce by 35%.<br/>
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_163_239)">
-<path d="M19.068 10.61L3.07127 0.14003C2.75248 -0.115669 2.6072 -0.0115948 2.7469 0.372414L9.32841 10.3776C9.46803 10.7616 9.46676 11.3839 9.32549 11.7674L2.7499 21.6267C2.60862 22.0101 2.75378 22.1154 3.07423 21.8618L19.0651 11.5323C19.3854 11.2787 19.3868 10.8658 19.068 10.61Z" fill="black"/>
-</g>
-<defs>
-<clipPath id="clip0_163_239">
-<rect width="22" height="22" fill="white" transform="matrix(-1 0 0 -1 22 22)"/>
-</clipPath>
-</defs>
-</svg> Your gap fee to see a private GP will increase by an average of $11.</p>
+          <div className="container-p-content-main">
+            <p className="p-content-main"> Based on {states === "sas" ? "Southern Australian’s" : states === "nsws" ? "New South Wales " : states === "vics"? "Victoria’s" : "N/A"} plans to enforce a State Tax on GP clinics over the next 2 years…</p>
+            <p className="p-content-main list-p-main"> <ArrowBlack/> Your chance to get a bulk-billed GP appointment will reduce by 35%.<br/>
+            <ArrowBlack/> Your gap fee to see a private GP will increase by an average of $11.</p>
+
+          </div>
         </div>
         <div hidden={showFindForm} className={"form-container"}>
-          <div className={"container container-content"}>
+          <div className={"container-content"}>
             <h1 className="text-form-header">
-              Concerned about how {states === "sas" ? "SA" : states === "nsws" ? "NSW" : states === "vics"? "VIC" : "N/A"}’s state tax will
+              Concerned about how {states === "sas" ? "Southern Australian’s" : states === "nsws" ? "New South Wales" : states === "vics"? "Victoria’s" : "N/A"} state tax will
               impact your care?<br/> <span className="subtext-form-header"> It takes less than two minutes to have your say!</span> 
             </h1>
             {error ? (
@@ -213,6 +199,18 @@ const MainForm = ({
                     </Form.Group>
                   );
                 })}
+                <Form.Group
+                  style={{ textAlign: "justify" }}
+                  className="field select-styles-form"
+                  controlId="conditions"
+                >
+                  <Form.Check
+                    name="conditions"
+                    onClick={handleTerms}
+                    required
+                    label={<p className="termsAndConds">{mainData.termsAndConditionsTxt}</p>}
+                  />
+                </Form.Group>
                 <Form.Group className="buton-box-form">
                   <Button
                     id="findButton-mainForm"
@@ -227,18 +225,7 @@ const MainForm = ({
                     {'Get Started'}
                   </Button>
                 </Form.Group>
-                <Form.Group
-                  style={{ textAlign: "justify" }}
-                  className="field select-styles-form"
-                  controlId="conditions"
-                >
-                  <Form.Check
-                    name="conditions"
-                    onClick={handleTerms}
-                    required
-                    label={<p>{mainData.termsAndConditionsTxt}</p>}
-                  />
-                </Form.Group>
+                
               </div>
               {showLoadSpin ? (
                 <Loader

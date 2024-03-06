@@ -9,12 +9,10 @@ const NT = ({setShowModal, setStates, setModalText,setMousePosition}) => {
     setStates(e.target.dataset.name)
     setModalText({
       title: 'Attention',
-      message:`Based on ${e.target.dataset.name}'s decision to not impose a state tax on health services in the next 2 years:
-      •Your chance to get a bulk billed GP is unchanged
-      •Your gap fee to see a private GP is unchanged`,
+      message:`${e.target.dataset.name}`,
       button: 'Close'
     })
-    console.log(e.clientX, e.clientY)
+    console.log(e.target.dataset.name)
     setMousePosition({ x: e.clientX - 100, y: e.clientY })
     setShowModal(true)
   };

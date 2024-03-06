@@ -1,6 +1,24 @@
 // Modal.js
 import React from "react";
 import "./modal.css"; // Importa tus estilos CSS
+import { Open_Sans, Anton } from "next/font/google";
+import PopupMessage from "./PopupMessage";
+
+const anton = Anton(
+  {
+      subsets:['latin'],
+      weight: '400',
+      variable: '--font-anton'
+      
+  }
+)
+const open_sans = Open_Sans(
+  {
+      subsets:['latin'],
+      weight: ['400', '600', '700', '800'],
+      variable: '--font-open-sans'
+  }
+)
 const Modal = ({modalRef, modalText, showModal, setShowModal, states,  setHideMain, setShowMap, mousePosition}) => {
   const closeModal = () => {
     setShowModal(false);
@@ -16,18 +34,26 @@ const Modal = ({modalRef, modalText, showModal, setShowModal, states,  setHideMa
   const obj = allowed.includes(states)
   return obj
   }
-  const text = modalText.message.split('\n')
+
+ 
+  
+  
   return (
     <div>
-        <div ref={modalRef} className={`modal-overlay ${showModal ? 'active' : ''}`} style={{ top: mousePosition.y, left: mousePosition.x }} onClick={closeModal}>
+        {/* <div ref={modalRef} className={`modal-overlay ${showModal ? 'active' : ''} ${open_sans.variable}`} style={{ top: mousePosition.y, left: mousePosition.x }} onClick={closeModal}> */}
+        <div ref={modalRef} className={`modal-overlay ${showModal ? 'active' : ''} ${open_sans.variable}`} onClick={closeModal}>
+
           <div
             className={`modal-content-own ${showModal ? 'active' : ''}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <h2>{modalText.title}</h2>
-                <p> { text.map((el,index)=> (
-                   <p key={index}> {el} <br/> </p>
-                ))}</p>
+            <h2 className={`${anton.variable} ${anton.className}`}>{modalText.title}</h2>
+                <p> 
+                  {
+                    PopupMessage(modalText.message)
+
+                  }
+                </p>
              <div>
               {
                 !toMainPage(states,allowed) && (

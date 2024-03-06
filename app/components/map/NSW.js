@@ -11,12 +11,7 @@ const NSW = ({mainData, setMainData, setStates, setShowModal, setModalText, setM
     setShowModal(true)
     setModalText({
       title: 'Attention',
-      message:`Based on NSW's plans to enforce a State Tax on GP clinics over the next 2 years…
-      • Your chance to get a bulk-billed GP appointment will reduce by 35%
-      • Your gap fee to see a private GP will increase by an average of $11
-      Concerned about how NSW state tax will impact your care?
-      Then let your local MP know about it.`,
-      button: 'Take Action!'
+      message:e.target.dataset.name
     })
     setMainData({
       ...mainData,
@@ -25,6 +20,7 @@ const NSW = ({mainData, setMainData, setStates, setShowModal, setModalText, setM
       • Your chance to get a bulk-billed GP appointment will reduce by 35%.
       • Your gap fee to see a private GP will increase by an average of $11.`
     })
+    console.log('name-region', e.target.dataset.name)
   };
 
 return (
