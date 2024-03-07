@@ -565,6 +565,11 @@ footer{
   .prewritten-email-btn-container{
     flex-direction: column;
   }
+  .arrow-black{
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
   .senators-container{
@@ -679,6 +684,8 @@ footer{
 @media (min-width:1250px) and (max-width:1499px){
   .footer-content-container{
     max-width: 1200px;
+    width:100%;
+    padding-left: 10px;
   }
   .main-form-flex-container{
     max-width: 1200px;
@@ -725,6 +732,8 @@ footer{
 @media (min-width:1500px) and (max-width:1699px){
   .footer-content-container{
     max-width: 1450px;
+    width: 100%;
+    padding-left: 10px;
   }
   .main-form-flex-container{
     max-width: 1450px;
