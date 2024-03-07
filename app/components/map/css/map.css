@@ -23,7 +23,8 @@
 .map {
   background-color: rgb(247, 246, 242);
   display: flex;
-  place-content: center center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 30px;
   transition: opacity 1s ease-in-out;
@@ -112,7 +113,7 @@
   padding-left: 0px;
   font-size: 25px;
   
-  max-width: 90%;
+  
   display: flex;
   justify-content: flex-start;
 }
@@ -143,7 +144,10 @@
     transform: translateY(-0%);
 }
 .svg-container{
-  max-width: 670px;
+  width: 100%;
+  height: auto;
+  max-width: 607px; 
+  padding: 0px;/* Ajusta según tus necesidades */
 }
 .map-container > svg {
   padding-top: 30px;
@@ -210,7 +214,7 @@ svg > text{
     margin: 0px 4px 0px 4px;
   }
   .navbar-text {
-    margin-left: 0%;
+    padding-left: 30px;
     font-size: 20px;
   }
   .top-nav{
@@ -226,6 +230,9 @@ svg > text{
     right: 0px;
     transform: translateY(23%);
     display: none;
+  }
+  .footer-content-container{
+    padding: 20px 0px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {

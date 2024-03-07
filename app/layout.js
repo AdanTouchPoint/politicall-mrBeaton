@@ -4,6 +4,7 @@ import { GAscript } from './lib/GAscript'
 import { GTMscript } from './lib/GTMscript'
 import { Anton } from 'next/font/google';
 import { Open_Sans } from 'next/font/google';
+import {Footer} from './components/Footer'
 const open_sans = Open_Sans(
   {
       subsets:['latin'],
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
       <body className={`${anton.className} ${anton.variable} ${open_sans.variable}`}>
         {children}
         <GTMnoscript />
+        
       </body>
     </html>
   )

@@ -67,9 +67,7 @@ const AusMap = ({
           <svg className="svg-container"
             version="1.2"
             viewBox="0 0 1000 1100"
-            xmlns="http://www.w3.org/2000/svg"
-            
-          >
+            xmlns="http://www.w3.org/2000/svg">
             <NT
               setMousePosition={setMousePosition}
               setModalText={setModalText}
