@@ -147,7 +147,7 @@ const MainForm = ({
           <h4 className="subtitle-content-mainform">{states === "sas" ? "SOUTH AUSTRALIA" : states === "nsws" ? "NEW SOUTH WALES" : states === "vics"? "VICTORIA" : "N/A"} DOESN’T CARE! </h4>
           <div className="container-p-content-main">
             <p className="p-content-main"> Based on {states === "sas" ? "Southern Australian’s" : states === "nsws" ? "New South Wales " : states === "vics"? "Victoria’s" : "N/A"} plans to enforce a State Tax on GP clinics over the next 2 years…</p>
-            <p className="p-content-main list-p-main"> <ArrowBlack/> Your chance to get a bulk-billed GP appointment will reduce by 35%.<br/>
+            <p className="p-content-main list-p-main"> <ArrowBlack/> Your chance to get a bulk-billed GP appointment will reduce by 35%.<br/><br/>
             <ArrowBlack/> Your gap fee to see a private GP will increase by an average of $11.</p>
 
           </div>
@@ -222,7 +222,7 @@ const MainForm = ({
                       "u-full-width capitalize-style find-btn-main-form"
                     }
                   >
-                    {'Get Started'}
+                    {'Get Started Today!'}
                   </Button>
                 </Form.Group>
                 
