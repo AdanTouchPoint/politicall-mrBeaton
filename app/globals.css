@@ -692,7 +692,7 @@ footer{
 }
 @media (min-width:1250px) and (max-width:1499px){
   .app-container{
-    height: auto;
+    height: 100%;
   }
   .footer-content-container{
     max-width: 1200px;
@@ -743,7 +743,7 @@ footer{
 
 @media (min-width:1500px) and (max-width:1699px){
   .app-container{
-    height: auto;
+    height: 100%;
   }
   .footer-content-container{
     max-width: 1450px;
@@ -771,7 +771,7 @@ footer{
 }
 @media (min-width:1700px) {
   .app-container{
-    height: auto;
+    height: 100%;
   } 
   .footer-content-container{
     max-width: 1650px;
