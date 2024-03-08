@@ -15,6 +15,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
+.app-container{
+  height: 100%;
+}
 .background-general{
   background-color: rgb(247, 246, 242);
   height: 100%;
@@ -422,6 +425,9 @@ footer{
   align-items: center;
 }
 @media (max-width: 767px) {
+  .app-container{
+    height: auto;
+  }
   footer{
 
     padding-left: 30px;
@@ -572,6 +578,9 @@ footer{
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
+  .app-container{
+    height: auto;
+  }
   .senators-container{
     width: 100%;
   }
@@ -682,6 +691,9 @@ footer{
   
 }
 @media (min-width:1250px) and (max-width:1499px){
+  .app-container{
+    height: auto;
+  }
   .footer-content-container{
     max-width: 1200px;
     width:100%;
@@ -730,6 +742,9 @@ footer{
 }
 
 @media (min-width:1500px) and (max-width:1699px){
+  .app-container{
+    height: auto;
+  }
   .footer-content-container{
     max-width: 1450px;
     width: 100%;
@@ -755,7 +770,10 @@ footer{
   }
 }
 @media (min-width:1700px) {
-   .footer-content-container{
+  .app-container{
+    height: auto;
+  } 
+  .footer-content-container{
     max-width: 1650px;
     width: 100%;
     padding-left:10px ;
@@ -794,6 +812,4 @@ footer{
     padding-left: 10px;
   }
 }
-@media (max-height:800px){
-  
-}
+
