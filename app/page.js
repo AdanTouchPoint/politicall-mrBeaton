@@ -122,6 +122,8 @@ function Home() {
 
 
     return(
+      <div className='main-app-container'>
+      
       <div className='app-container'>
         {/* <LoadingMainForm/> */}
       {
@@ -178,6 +180,7 @@ function Home() {
 
         )
       }
+      </div>
       <footer>
           <div className='footer-content-container'>
               <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -194,6 +197,7 @@ function Home() {
               <span className={`${open_sans.className} footer-text`}>COPYRIGHT 2024. STOP SWAMPING GPS</span>
           </div>
       </footer>
+      
       </div>
     )
 
