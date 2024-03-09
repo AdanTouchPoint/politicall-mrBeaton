@@ -132,10 +132,10 @@ const MainForm = ({
     scroll.scrollToBottom();
   };
   return (
+    <>
     <div hidden={hideMain} className="main-form-full-width">
        <TAC setShowTAC={setShowTAC} showTAC={showTAC} />
-      <div className={"main-form-flex-container"}>
-        <div className="instructions-findform-contain">
+       <div className="instructions-findform-contain">
         <div hidden={hideInstructions} className={"instructions"}>
           <div className="img-mps-container">
             {
@@ -241,6 +241,7 @@ const MainForm = ({
           </div> 
         </div>
         </div>
+    </div>
         <div className={"container senators-container"} hidden={showList}>
           <div className="note-container">
             <p>{mainData.note}</p>
@@ -340,8 +341,7 @@ const MainForm = ({
           typData={typData}
           showThankYou={showThankYou}
         />
-      </div>
-    </div>
+    </>
   );
 };
 export default MainForm;
