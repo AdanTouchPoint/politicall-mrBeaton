@@ -437,6 +437,11 @@ footer{
   column-gap:10px;
   align-items: center;
 }
+.email-form-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 @media (max-width: 767px) {
   .app-container.main-app-container{
     min-height: calc(100vh - 70px);
@@ -740,7 +745,7 @@ footer{
     width:100%;
     padding-left: 10px;
   }
-  .main-form-flex-container, .instructions-findform-contain{
+  .main-form-flex-container, .instructions-findform-contain, .emailContainer{
     max-width: 1200px;
     padding: 0px;
   }
@@ -791,7 +796,7 @@ footer{
     width: 100%;
     padding-left: 10px;
   }
-  .main-form-flex-container, .instructions-findform-contain{
+  .main-form-flex-container, .instructions-findform-contain, .emailContainer{
     max-width: 1450px;
     padding: 0px;
 
@@ -819,7 +824,7 @@ footer{
     width: 100%;
     padding-left:10px ;
   }
-  .main-form-flex-container, .instructions-findform-contain{
+  .main-form-flex-container, .instructions-findform-contain, .emailContainer{
     max-width: 1650px;
     padding: 0px;
 
