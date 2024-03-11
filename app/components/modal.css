@@ -197,6 +197,9 @@ text-align: center;
 .modal-content-footer-strong-text{
   font-size: 16px;
 }
+.modal-content-own.active{
+   width: 90%;
+}
 }
 @media screen and (min-width: 769px) and (max-width:1024px){
   .modal-content-own {

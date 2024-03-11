@@ -44,7 +44,7 @@ const AusMap = ({
        <div class="box-map">
         <div className="text-map">
           <p className="subtitle-map">
-            SEEING YOUR GP IS ABOUT TO GET A LOT HARDER <br/>
+            SEEING YOUR GP IS ABOUT TO GET A LOT HARDER 
             DEPENDING ON WHAT STATE YOU LIVE IN.
           </p>
         </div>
@@ -66,7 +66,7 @@ const AusMap = ({
           />
           <svg className="svg-container"
             version="1.2"
-            viewBox="0 0 100 100"
+            viewBox="0 0 100 150"
             xmlns="http://www.w3.org/2000/svg">
             <NT
               setMousePosition={setMousePosition}

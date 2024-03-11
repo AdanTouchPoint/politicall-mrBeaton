@@ -15,10 +15,12 @@
 }
 .subtitle-map {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 600;
   font-family: var(--font-open-sans);
   text-align: center;
-  margin: 30px 0px 70px 0px ;
+  margin: 100px 0px 70px 0px ;
+  max-width: 837px;
+  line-height: 36px;
 }
 .map {
   background-color: rgb(247, 246, 242);
@@ -183,8 +185,9 @@ svg > text{
   .svg-container{
     width:100%;
     padding-top: 20px;
-    margin-left: 0px;
+    padding-left: 30px;
     margin: 0 auto;
+    height: auto;
   }
   .title-black {
   font-size: 50px;
@@ -197,9 +200,12 @@ svg > text{
   }
   .subtitle-map{
     padding-left: 0px;
-    margin-top: 15px;
+    margin-top: 50px;
     margin-bottom: 30px;
-    font-size: 13px;
+    font-size: 16px;
+    max-width: 311px;
+    line-height: 22px;
+
   }
   .top-banner-map{
   font-size: 14px;
