@@ -9,13 +9,14 @@ import EmailForm from "./EmailForm";
 import ThankYou from "./ThankYou";
 import Card from "react-bootstrap/cjs/Card";
 import Image from "next/image";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 import { fetchRepresentatives } from "../assets/petitions/fetchRepresentatives";
 import TAC from "./TAC";
 import vicsImage from "../assets/images/VICS-premier.png"
 import nswImage from "../assets/images/NSW-premier.png"
 import saImage from "../assets/images/SA-premier.png"
 import ArrowBlack from "./ArrowBlack";
+import Link from "next/link";
 const MainForm = ({
   dataUser,
   setDataUser,
@@ -59,7 +60,6 @@ const MainForm = ({
     e.preventDefault;
     console.log("here");
     if (e.target.checked === true) {
-      setShowTAC(true);
       setTac(true);
     } else {
       setTac(false);
@@ -74,7 +74,7 @@ const MainForm = ({
         break;
         case 'sas':
           return (
-            <Image src={saImage} alt="South Africa's Premier" className="mps-image"/>
+            <Image src={saImage} alt="South Australia Premier" className="mps-image"/>
           )        
         break;
         case 'nsws':
@@ -146,16 +146,16 @@ const MainForm = ({
           {/* <h2 className="subtitle-main" >{mainData.subtitle}</h2> */}
           <h4 className="subtitle-content-mainform">{states === "sas" ? "SOUTH AUSTRALIA" : states === "nsws" ? "NEW SOUTH WALES" : states === "vics"? "VICTORIA" : "N/A"} DOESN’T CARE! </h4>
           <div className="container-p-content-main">
-            <p className="p-content-main"> Based on {states === "sas" ? "Southern Australian’s" : states === "nsws" ? "New South Wales " : states === "vics"? "Victoria’s" : "N/A"} plans to enforce a State Tax on GP clinics over the next 2 years…</p>
+            <p className="p-content-main"> Based on {states === "sas" ? "South Australia’s" : states === "nsws" ? "New South Wales " : states === "vics"? "Victoria’s" : "N/A"} plans to enforce a State Tax on GP clinics over the next 2 years…</p>
             <p className="p-content-main list-p-main"> <ArrowBlack/> Your chance to get a bulk-billed GP appointment will reduce by 35%.<br/><br/>
-            <ArrowBlack/> Your gap fee to see a private GP will increase by an average of $11.</p>
+            <ArrowBlack/> Your gap fee to see a private GP will increase by an average of {states === "sas" ? "$12" : "11"} .</p>
 
           </div>
         </div>
         <div hidden={showFindForm} className={"form-container"}>
           <div className={"container-content"}>
             <h1 className="text-form-header">
-              Concerned about how {states === "sas" ? "Southern Australian’s" : states === "nsws" ? "New South Wales" : states === "vics"? "Victoria’s" : "N/A"} state tax will
+              Concerned about how {states === "sas" ? "South Australia’s" : states === "nsws" ? "New South Wales" : states === "vics"? "Victoria’s" : "N/A"} state tax will
               impact your care?<br/> <span className="subtext-form-header"> It takes less than two minutes to have your say!</span> 
             </h1>
             {error ? (
@@ -164,14 +164,6 @@ const MainForm = ({
                 spaces before of after your email or postcode.
               </Alert>
             ) : null}
-            <Link
-              activeClass="active"
-              to="section1"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-            ></Link>
             <Form
               name="fm-find"
               onSubmit={click}
@@ -208,9 +200,9 @@ const MainForm = ({
                     name="conditions"
                     onClick={handleTerms}
                     required
-                    label={<p className="termsAndConds">{mainData.termsAndConditionsTxt}</p>}
+                    label={<Link target="_blank" className="termsAndConds" href="/TAC"> {mainData.termsAndConditionsTxt}</Link>}
                   />
-                </Form.Group>
+                </Form.Group>                
                 <Form.Group className="buton-box-form">
                   <Button
                     id="findButton-mainForm"
@@ -242,18 +234,10 @@ const MainForm = ({
         </div>
         </div>
     </div>
-        <div className={"container senators-container"} hidden={showList}>
+        <div className={"container"} hidden={showList}>
           <div className="note-container">
             <p>{mainData.note}</p>
           </div>
-          <Link
-            activeClass="active"
-            to="section1"
-            spy={true}
-            smooth={true}
-            offset={70}
-            duration={500}
-          ></Link>
           <h2>{mainData.positionName}</h2>
           <div className="representatives-container">
             {mp.length > 0 ? (

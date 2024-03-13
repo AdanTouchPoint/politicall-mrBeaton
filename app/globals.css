@@ -388,7 +388,8 @@ h5 {
 .img-mps-container{
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  max-width: 460px;
 }
 .main-form-full-width{
   width: 100%;

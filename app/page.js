@@ -98,9 +98,6 @@ function Home() {
       button: "close"
     })
     const [hideMain, setHideMain]= useState(true)
-
-    
-   // const adanCID ='636dadcf2626f92aade6664a'
     useEffect(() => {
 
         async function fetchData() {
@@ -118,9 +115,6 @@ function Home() {
         }
         fetchData()
     },[])
-    
-
-
     return(
       <div className='main-app-container'>
       
